@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent {
+  status: boolean = false;
   productList: { id: string; name: string, price: number, status: boolean; description: string}[] = [
     { 
       id: '1',
@@ -34,7 +35,11 @@ export class ProductComponent {
       price: 400,
       status: false,
       description: 'Product D description'
-    }
+    },
   ]
-
+  onHandlerClick() {
+    console.log("clicked!");
+    
+    this.status = !this.status
+  }
 }
