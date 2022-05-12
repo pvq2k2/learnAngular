@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent {
+  title: string = 'Product Name'
   status: boolean = false;
   productList: { id: string; name: string, price: number, status: boolean; description: string}[] = [
     { 
@@ -41,5 +42,11 @@ export class ProductComponent {
     console.log("clicked!");
     
     this.status = !this.status
+  }
+  onHandlerRemove(id: string) {
+    this.productList = this.productList.filter(p => p.id != id);
+  }
+  onHandlerKeyPress(e: any) {
+    this.title = e.target.value;
   }
 }

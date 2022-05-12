@@ -1,3 +1,15 @@
+<form action="">
+  <input
+    type="text"
+    (keypress)="onHandlerKeyPress($event)"
+    value="{{ title }}"
+  />
+  {{ title }}
+</form>
+
+<div>
+  <input type="text" [(ngModel)]="title"> {{ title }}
+</div>
 <button (click)="onHandlerClick()" >Click</button>
 
     <div *ngIf="status">
@@ -20,7 +32,7 @@
           <td>{{ product.price }}</td>
           <td>{{ product.description }}</td>
           <td>{{ product.status ? "Còn hàng" : "Hết hàng" }}</td>
-          <td><button class="btn btn-danger">Delete</button></td>
+          <td><button class="btn btn-danger" (click)="onHandlerRemove(product.id)">Delete</button></td>
         </tr>
       </tbody>
     </table>
