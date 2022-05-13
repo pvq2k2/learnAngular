@@ -5,13 +5,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
-import { ProductComponent } from './components/product/product.component';
+import { ProductaddComponent } from './pages/admin/products/productadd/productadd.component';
+import { ProductmanagerComponent } from './pages/admin/products/productmanager/productmanager.component';
+import { HomepageComponent } from './pages/homepage/homepage.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    ProductComponent,
+    ProductaddComponent,
+    ProductmanagerComponent,
+    HomepageComponent,
   ],
   imports: [
     BrowserModule,
