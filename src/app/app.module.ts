@@ -4,18 +4,16 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
-import { ProductaddComponent } from './pages/admin/products/productadd/productadd.component';
-import { ProductmanagerComponent } from './pages/admin/products/productmanager/productmanager.component';
-import { HomepageComponent } from './pages/homepage/homepage.component';
+import { ProductManagerComponent } from './components/product-manager/product-manager.component';
+import { ProductAddComponent } from './components/product-add/product-add.component';
+import { ProductEditComponent } from './components/product-edit/product-edit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    ProductaddComponent,
-    ProductmanagerComponent,
-    HomepageComponent,
+    ProductManagerComponent,
+    ProductAddComponent,
+    ProductEditComponent,
   ],
   imports: [
     BrowserModule,
