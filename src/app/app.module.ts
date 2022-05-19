@@ -4,9 +4,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ProductManagerComponent } from './components/product-manager/product-manager.component';
-import { ProductAddComponent } from './components/product-add/product-add.component';
-import { ProductEditComponent } from './components/product-edit/product-edit.component';
+import { ProductManagerComponent } from './pages/admin/products/product-manager/product-manager.component';
+import { ProductAddComponent } from './pages/admin/products/product-add/product-add.component';
+import { ProductEditComponent } from './pages/admin/products/product-edit/product-edit.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AdminLayoutComponent } from './pages/layouts/admin/admin-layout/admin-layout.component';
+import { AdminContentComponent } from './pages/layouts/admin/admin-content/admin-content.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +17,14 @@ import { ProductEditComponent } from './components/product-edit/product-edit.com
     ProductManagerComponent,
     ProductAddComponent,
     ProductEditComponent,
+    AdminLayoutComponent,
+    AdminContentComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
