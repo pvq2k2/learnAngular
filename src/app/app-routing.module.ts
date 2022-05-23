@@ -10,11 +10,11 @@ const routes: Routes = [
     path: 'admin',
     component: AdminLayoutComponent,
     children: [
-      {
-        path: '',
-        redirectTo: 'student',
-        pathMatch: 'full'
-      },
+      // {
+      //   path: '',
+      //   redirectTo: 'student',
+      //   pathMatch: 'full'
+      // },
       {
         path: 'product',
         children: [

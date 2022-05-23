@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from "@angular/core";
+import { Observable } from 'rxjs';
 import { IProduct } from '../models/Product';
 
 const apiUrl = 'http://localhost:3001/products';
@@ -12,20 +13,21 @@ export class ProductService {
 
     constructor ( private http: HttpClient) {}
 
-    getAllProducts() {
-        return this.http.get(apiUrl);
+    getAllProducts(): Observable<IProduct[]> {
+        return this.http.get<IProduct[]>(apiUrl);
     }
 
-    getProduct(id: number | string) {
-        return this.http.get(`${apiUrl}/${id}`);
+    getProduct(id: number | string): Observable<IProduct> {
+        return this.http.get<IProduct>(`${apiUrl}/${id}`);
+    }
+    addProduct(product: IProduct): Observable<IProduct> {
+        return this.http.post<IProduct>(apiUrl, product);
     }
 
-    addProduct(product: IProduct) {
-        return this.http.post(apiUrl, product);
+    updateProduct(product: IProduct): Observable<IProduct> {
+        return this.http.put<IProduct>(`${apiUrl}/${product.id}`, product);
     }
-
-    updateProduct(product: IProduct) {
-        return this.http.put(`${apiUrl}/${product.id}`, product);
+    removeProduct(id: number | string): Observable<IProduct> {
+        return this.http.delete<IProduct>(`${apiUrl}/${id}`);
     }
-
 }

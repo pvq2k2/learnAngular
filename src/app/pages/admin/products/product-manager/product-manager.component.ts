@@ -18,20 +18,22 @@ export class ProductManagerComponent implements OnInit {
   }
 
   onGetAllProducts() {
-    this.productService.getAllProducts().subscribe((data: any) => {
+    this.productService.getAllProducts().subscribe((data) => {
       this.products = data;
     })
   }
   onGetProduct(id: number | string) {
     this.statusShowDetail = true;
-    this.productService.getProduct(id).subscribe((data: any) => {
+    this.productService.getProduct(id).subscribe((data) => {
       this.productDetail = data;
     })
   }
-
-  // showDetail(id: number | string) {
-  //   !this.statusShowDeails
-  //   this.productDeail = this.products.find((item: { id: string | number; }) => item.id === id);
-  // }
-
+  onRemoveProduct(id: number | string) {
+    const confirm = window.confirm("Are you sure you want to delete this item?");
+    if (confirm) {
+      this.productService.removeProduct(id).subscribe(() => {
+          this.products.filter(item => item.id !== id);
+      })
+    }
+  }
 }
