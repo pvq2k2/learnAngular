@@ -32,7 +32,7 @@ export class ProductManagerComponent implements OnInit {
     const confirm = window.confirm("Are you sure you want to delete this item?");
     if (confirm) {
       this.productService.removeProduct(id).subscribe(() => {
-          this.products.filter(item => item.id !== id);
+          this.products = this.products.filter(item => item.id !== id);
       })
     }
   }

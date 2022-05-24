@@ -1,4 +1,4 @@
-<!-- {{ product | json }} -->
+{{ product | json }}
 <!-- <form >
     <input type="text" [(ngModel)]="product.name" placeholder="name" name="name" />
     <input type="number" [(ngModel)]="product.price" placeholder="price" name="price" />
@@ -26,25 +26,25 @@
   </header>
     <div class="m-auto max-w-7xl pb-36 mt-5">
     <div class="mt-5 md:mt-0 md:col-span-2">
-      <form action="#" id="form-add-product" method="POST" (ngSubmit)="onSubmit()">
+      <form action="#" id="form-add-product" method="POST" (ngSubmit)="onAddProduct()">
         <div class="shadow sm:rounded-md sm:overflow-hidden">
           <div class="px-4 py-5 bg-white space-y-6 sm:p-6">
 
-            <div>
+            <!-- <div>
                 <label for="id" class="block text-sm font-medium text-gray-700">
-                  id
+                  ID
                 </label>
                 <div class="mt-1">
-                <input type="text" id="id-add-product" [(ngModel)]="product.id" name="name" class="shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md p-2" placeholder="Title...">
+                <input type="text" id="id-add-product" name="name" class="shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md p-2" formControlName="id" placeholder="Auto Number" readonly>
                 </div>
-              </div>
+              </div> -->
 
             <div>
             <label for="name" class="block text-sm font-medium text-gray-700">
               Name
             </label>
             <div class="mt-1">
-            <input type="text" id="name-add-product" [(ngModel)]="product.name" name="name" class="shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md p-2" placeholder="Title...">
+            <input type="text" id="name-add-product" [(ngModel)]="product.name" name="name" class="shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md p-2" placeholder="Name...">
             </div>
           </div>
 
@@ -53,7 +53,7 @@
                 Price
               </label>
               <div class="mt-1">
-              <input type="text" id="price-add-product" [(ngModel)]="product.price" name="price" class="shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md p-2" placeholder="Price...">
+              <input type="number" id="price-add-product" [(ngModel)]="product.price" name="price" class="shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md p-2" placeholder="Price...">
               </div>
             </div>
 
@@ -62,7 +62,7 @@
                   Description
                 </label>
                 <div class="mt-1">
-                <input type="text" id="description-add-product" [(ngModel)]="product.description" name="price" class="shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md p-2" placeholder="Price...">
+                <input type="text" id="description-add-product" [(ngModel)]="product.description" name="price" class="shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md p-2" placeholder="Description...">
                 </div>
               </div>
 
