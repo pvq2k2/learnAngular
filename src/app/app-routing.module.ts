@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminGuard } from './guard/admin.guard';
 import { ProductFormsComponent } from './pages/admin/products/product-forms/product-forms.component';
 import { ProductManagerComponent } from './pages/admin/products/product-manager/product-manager.component';
 import { AdminLayoutComponent } from './pages/layouts/admin/admin-layout/admin-layout.component';
@@ -15,7 +16,7 @@ const routes: Routes = [
       //   pathMatch: 'full'
       // },
       {
-        path: 'product',
+        path: 'product', canActivate:[AdminGuard], 
         children: [
           {
             path: '',
