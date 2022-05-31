@@ -9,6 +9,15 @@ import { ProductManagerComponent } from './pages/admin/products/product-manager/
 import { AdminLayoutComponent } from './pages/layouts/admin/admin-layout/admin-layout.component';
 import { AdminContentComponent } from './pages/layouts/admin/admin-content/admin-content.component';
 import { ProductFormsComponent } from './pages/admin/products/product-forms/product-forms.component';
+import { NZ_I18N } from 'ng-zorro-antd/i18n';
+import { en_US } from 'ng-zorro-antd/i18n';
+import { registerLocaleData } from '@angular/common';
+import en from '@angular/common/locales/en';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgZorroAntdModule } from './ng-zorro-antd.module';
+import { IconsProviderModule } from './icons-provider.module';
+
+registerLocaleData(en);
 
 
 @NgModule({
@@ -24,9 +33,12 @@ import { ProductFormsComponent } from './pages/admin/products/product-forms/prod
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    BrowserAnimationsModule,
+    NgZorroAntdModule,
+    IconsProviderModule
   ],
-  providers: [],
+  providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
