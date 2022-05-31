@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { IProduct } from 'src/app/models/Product';
 import { ProductService } from 'src/app/services/product.service';
 
@@ -17,7 +18,8 @@ export class ProductFormsComponent implements OnInit {
   constructor(
     private activateRoute: ActivatedRoute,
     private productService: ProductService,
-    private routes: Router ) { }
+    private routes: Router,
+    private notification: NzNotificationService ) { }
 
   ngOnInit(): void {
     const id = +this.activateRoute.snapshot.paramMap.get('id')!;
@@ -32,12 +34,14 @@ export class ProductFormsComponent implements OnInit {
     if (id) {
       this.productService.updateProduct(this.product).subscribe(() => {
         setTimeout(() => {
+          this.notification.success('Success','')
           this.routes.navigate(['admin/product']);
         }, 2000)
       })
     }
     this.productService.addProduct(this.product).subscribe(() => {
       setTimeout(() => {
+        this.notification.success('Success','')
         this.routes.navigate(['admin/product']);
       }, 2000)
     });

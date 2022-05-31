@@ -71,7 +71,14 @@
       <td class="px-6 py-4 text-sm font-medium">
       <button class="btn btn-info mr-2 text-white" (click)="onGetProduct(product.id!)">Info</button>
       <button class="btn btn-warning mr-2" routerLink="{{ product.id }}/edit">Edit</button>
-      <button class="btn btn-danger text-white" (click)="onRemoveProduct(product.id!)">Remove</button>
+      
+      <button 
+        nz-popconfirm
+        nzPopconfirmTitle="Are you sure delete this product?"
+        (nzOnConfirm)="confirm(product.id!)"
+        (nzOnCancel)="cancel()"
+        nzPopconfirmPlacement="top"
+        class="btn btn-danger text-white">Remove</button>
     </td>
 
           

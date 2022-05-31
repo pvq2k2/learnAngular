@@ -11,6 +11,12 @@
       "name": "Product D",
       "price": 100,
       "description": "Product C description"
+    },
+    {
+      "name": "Product C",
+      "price": 100,
+      "description": "Product C description",
+      "id": 3
     }
   ]
 }
