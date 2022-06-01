@@ -18,5 +18,13 @@
       "description": "Product C description",
       "id": 3
     }
+  ],
+  "users": [
+    {
+      "email": "quyetpvph15476@fpt.edu.vn",
+      "password": "$2a$10$Q/BgsvSja8tUVB3Jp9OUgODxTQiMHL9jc/nKUHweBpXnhzjQ.LknO",
+      "name": "quyet",
+      "id": 1
+    }
   ]
 }

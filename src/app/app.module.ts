@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
@@ -16,6 +16,8 @@ import en from '@angular/common/locales/en';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgZorroAntdModule } from './ng-zorro-antd.module';
 import { IconsProviderModule } from './icons-provider.module';
+import { SignInComponent } from './pages/sign-in/sign-in.component';
+import { SignUpComponent } from './pages/sign-up/sign-up.component';
 
 registerLocaleData(en);
 
@@ -27,6 +29,8 @@ registerLocaleData(en);
     AdminLayoutComponent,
     AdminContentComponent,
     ProductFormsComponent,
+    SignInComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +40,8 @@ registerLocaleData(en);
     RouterModule,
     BrowserAnimationsModule,
     NgZorroAntdModule,
-    IconsProviderModule
+    IconsProviderModule,
+    ReactiveFormsModule
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]
