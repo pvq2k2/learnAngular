@@ -1,8 +1,14 @@
-<!-- <form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
+<div class="bg_gradient">
+<div class="w-96 relative inline-block left-1/2 -translate-x-1/2 translate-y-1/2">
+  <div class="box bg-white rounded-3xl p-5">
+  <div>
+    <h1 class="mx-auto text-center uppercase">Login</h1>
+  </div>
+<form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
     <nz-form-item>
-      <nz-form-control nzErrorTip="Please input your username!">
-        <nz-input-group nzPrefixIcon="user">
-          <input type="text" nz-input formControlName="email" placeholder="Username" name="email"/>
+      <nz-form-control nzErrorTip="Please input your email!">
+        <nz-input-group nzPrefixIcon="mail">
+          <input type="text" nz-input formControlName="email" placeholder="Email" name="email"/>
         </nz-input-group>
       </nz-form-control>
     </nz-form-item>
@@ -24,11 +30,13 @@
       </div>
     </div>
     <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">Log in</button>
-    Or
-    <a>register now!</a>
-  </form> -->
-
-  <header class="bg-white">
+    
+    <a routerLink="/signup" class="text-center">Or register now!</a>
+  </form>
+</div>
+</div>
+</div>
+  <!-- <header class="bg-white">
     <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 flex justify-between">
       <h1 id="headdingTitle" class="text-3xl font-bold text-gray-900">Product From</h1>
       <a routerLink="/admin/product" class="sm:ml-3">
@@ -82,4 +90,4 @@
       </form>
     </div>
   </div>
-
+ -->

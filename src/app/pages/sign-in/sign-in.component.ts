@@ -13,81 +13,66 @@ import { AuthService } from 'src/app/services/auth.service';
 export class SignInComponent implements OnInit {
 
 // Cách 1
-  // validateForm!: FormGroup;
-  // data: any;
-  // submitForm(): void {
-  //   if (this.validateForm.valid) {
-  //     console.log('submit', this.validateForm.value);
-  //     this.authService.signIn(this.validateForm.value).subscribe(res => {
-  //       localStorage.setItem('user', JSON.stringify(res.user));
-  //       this.notification.success('Success','')
-  //       setTimeout(() => {
-  //         this.routes.navigate(['']);
-  //       }, 2000)
-  //     })
-      // this.data = this.validateForm.value;
-      // if (this.data) {
-      //   this.authService.getUser(this.data).subscribe(data => {
-      //     if (this.data.email == data.email) {
-      //       this.authService.signIn(data).subscribe(user => {
-      //         localStorage.setItem('user', JSON.stringify(user));
-      //         setTimeout(() => {
-      //           this.notification.success('Success','')
-      //           this.routes.navigate(['']);
-      //         }, 2000)
-      //       })
-      //     }
-      //   })
-      // }
-  //   } else {
-  //     Object.values(this.validateForm.controls).forEach(control => {
-  //       if (control.invalid) {
-  //         control.markAsDirty();
-  //         control.updateValueAndValidity({ onlySelf: true });
-  //       }
-  //     });
-  //   }
-  // }
+  validateForm!: FormGroup;
+  submitForm(): void {
+    if (this.validateForm.valid) {
+      // console.log('submit', this.validateForm.value);
+      this.authService.signIn(this.validateForm.value).subscribe(res => {
+        localStorage.setItem('user', JSON.stringify(res.user));
+        this.notification.success('Success','')
+        setTimeout(() => {
+          this.routes.navigate(['']);
+        }, 2000)
+      })
+    } else {
+      Object.values(this.validateForm.controls).forEach(control => {
+        if (control.invalid) {
+          control.markAsDirty();
+          control.updateValueAndValidity({ onlySelf: true });
+        }
+      });
+    }
+  }
 
-  // constructor(
-  //   private fb: FormBuilder,
-  //   private authService: AuthService,
-  //   private routes: Router,
-  //   private notification: NzNotificationService
-  //   ) {}
+  constructor(
+    private fb: FormBuilder,
+    private authService: AuthService,
+    private routes: Router,
+    private notification: NzNotificationService
+    ) {}
 
-  // ngOnInit(): void {
-  //   this.validateForm = this.fb.group({
-  //     email: [null, [Validators.required]],
-  //     password: [null, [Validators.required]],
-  //     remember: [true]
-  //   });
-  // }
+  ngOnInit(): void {
+    this.validateForm = this.fb.group({
+      email: [null, [Validators.required]],
+      password: [null, [Validators.required]],
+      remember: [true]
+    });
+  }
 
 
 // Cách 2
-  user: IUser = {
-    name: '',
-    email: '',
-    password: ''
-  };
-  constructor(
-    private activateRoute: ActivatedRoute,
-    private authService: AuthService,
-    private routes: Router,
-    private notification: NzNotificationService ) { }
+  // user: IUser = {
+  //   name: '',
+  //   email: '',
+  //   password: ''
+  // };
+  // constructor(
+  //   private activateRoute: ActivatedRoute,
+  //   private authService: AuthService,
+  //   private routes: Router,
+  //   private notification: NzNotificationService ) { }
 
-  ngOnInit(): void {
-  }
-  onSignIn() {
-    this.authService.signIn(this.user).subscribe(res => {
-      localStorage.setItem('user', JSON.stringify(res.user));
-      this.notification.success('Success','')
-      setTimeout(() => {
-        this.routes.navigate(['']);
-      }, 2000)
-    });
-  }
+  // ngOnInit(): void {
+  // }
+  // onSignIn() {
+  //   this.authService.signIn(this.user).subscribe(res => {
+  //     localStorage.setItem('user', JSON.stringify(res.user));
+  //     this.notification.success('Success','')
+  //     setTimeout(() => {
+  //       this.routes.navigate(['']);
+  //     }, 2000)
+  //   });
+  // }
 
 
 
