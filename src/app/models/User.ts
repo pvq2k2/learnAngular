@@ -7,5 +7,6 @@ export interface IUser {
     position?: string,
     about?: string,
     cv?: string,
+    img?: string,
     // user: name, position, about, cv
 }
