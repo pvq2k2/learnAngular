@@ -1,0 +1,23 @@
+footer {
+    text-align: center;
+  }
+  
+  footer .social {
+    margin-top: 100px;
+  }
+  
+  footer .social ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 30px;
+  }
+  
+  footer .social ul li a {
+    font-size: 40px;
+    color: #000000;
+  }
+  footer .copyright span {
+    font-size: 15px;
+    padding-bottom: 50px;
+  }

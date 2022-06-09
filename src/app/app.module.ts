@@ -10,6 +10,8 @@ import { ProductFormsComponent } from './pages/admin/products/product-forms/prod
 import { UserManagerComponent } from './pages/admin/user/user-manager/user-manager.component';
 import { AdminLayoutComponent } from './pages/layouts/admin/admin-layout/admin-layout.component';
 import { AdminContentComponent } from './pages/layouts/admin/admin-content/admin-content.component';
+import { WebsiteLayoutComponent } from './pages/layouts/website/website-layout/website-layout.component';
+import { WebsiteContentComponent } from './pages/layouts/website/website-content/website-content.component';
 import { NZ_I18N } from 'ng-zorro-antd/i18n';
 import { en_US } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
@@ -19,6 +21,9 @@ import { NgZorroAntdModule } from './ng-zorro-antd.module';
 import { IconsProviderModule } from './icons-provider.module';
 import { SignInComponent } from './pages/sign-in/sign-in.component';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
 
 registerLocaleData(en);
 
@@ -28,11 +33,16 @@ registerLocaleData(en);
     AppComponent,
     AdminLayoutComponent,
     AdminContentComponent,
+    WebsiteLayoutComponent,
+    WebsiteContentComponent,
     ProductManagerComponent,
     ProductFormsComponent,
     UserManagerComponent,
     SignInComponent,
-    SignUpComponent
+    SignUpComponent,
+    HomePageComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
