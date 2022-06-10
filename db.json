@@ -19,6 +19,12 @@
       "id": 3
     }
   ],
+  "categorypost": [
+    {
+      "name": "Node JS",
+      "id": 1
+    }
+  ],
   "users": [
     {
       "email": "quyetpvph15476@fpt.edu.vn",
