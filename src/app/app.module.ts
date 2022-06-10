@@ -24,6 +24,7 @@ import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { BlogComponent } from './pages/blog/blog.component';
 import { UserFormsComponent } from './pages/admin/user/user-forms/user-forms.component';
 
 registerLocaleData(en);
@@ -43,6 +44,7 @@ registerLocaleData(en);
     SignInComponent,
     SignUpComponent,
     HomePageComponent,
+    BlogComponent,
     HeaderComponent,
     FooterComponent
   ],

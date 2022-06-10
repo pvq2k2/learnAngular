@@ -5,6 +5,7 @@ import { ProductFormsComponent } from './pages/admin/products/product-forms/prod
 import { ProductManagerComponent } from './pages/admin/products/product-manager/product-manager.component';
 import { UserFormsComponent } from './pages/admin/user/user-forms/user-forms.component';
 import { UserManagerComponent } from './pages/admin/user/user-manager/user-manager.component';
+import { BlogComponent } from './pages/blog/blog.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { AdminLayoutComponent } from './pages/layouts/admin/admin-layout/admin-layout.component';
 import { WebsiteLayoutComponent } from './pages/layouts/website/website-layout/website-layout.component';
@@ -19,10 +20,10 @@ const routes: Routes = [
           path: '',
           component: HomePageComponent
         },
-        // {
-        //   path: 'post',
-        //   component: PostPageComponent
-        // },
+        {
+          path: 'blog',
+          component: BlogComponent
+        },
         // {
         //   path: 'work',
         //   component: WorkPageComponent
