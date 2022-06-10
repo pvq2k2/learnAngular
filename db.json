@@ -25,6 +25,12 @@
       "id": 1
     }
   ],
+  "categoryproject": [
+    {
+      "name": "Node JS",
+      "id": 1
+    }
+  ],
   "users": [
     {
       "email": "quyetpvph15476@fpt.edu.vn",
