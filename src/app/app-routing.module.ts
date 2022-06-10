@@ -11,6 +11,7 @@ import { AdminLayoutComponent } from './pages/layouts/admin/admin-layout/admin-l
 import { WebsiteLayoutComponent } from './pages/layouts/website/website-layout/website-layout.component';
 import { SignInComponent } from './pages/sign-in/sign-in.component';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
+import { WorkComponent } from './pages/work/work.component';
 
 const routes: Routes = [
   {
@@ -24,14 +25,21 @@ const routes: Routes = [
           path: 'blog',
           component: BlogComponent
         },
-        // {
-        //   path: 'work',
-        //   component: WorkPageComponent
-        // },
+        {
+          path: 'work',
+          component: WorkComponent
+        },
+        {
+          path: 'signin',
+          component: SignInComponent
+        },
+        {
+          path: 'signup',
+          component: SignUpComponent
+        },
     ]
   },
-  {path: 'signin', component: SignInComponent},
-  {path: 'signup', component: SignUpComponent},
+ 
   {
     path: 'admin',
     component: AdminLayoutComponent,
