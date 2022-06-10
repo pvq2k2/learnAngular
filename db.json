@@ -22,9 +22,19 @@
   "users": [
     {
       "email": "quyetpvph15476@fpt.edu.vn",
-      "password": "$2a$10$Q/BgsvSja8tUVB3Jp9OUgODxTQiMHL9jc/nKUHweBpXnhzjQ.LknO",
+      "password": "$2a$10$lp0Bt4ldkdRZQ3xY0siwt.rQlcB/LotmuS0QCfSiGQEoyDmJ/0vKa",
+      "name": "Quyet",
+      "id": 1,
+      "position": "Front End Developer",
+      "about": "Quyetdk"
+    },
+    {
+      "email": "quyetpvph15476@fpt.edu.vnn",
+      "password": "$2a$10$S8/H1CsdjW8J.fVLa9b6JuD1kbtg8kv.RcclvsaNijtGflg40240.",
       "name": "quyet",
-      "id": 1
+      "position": "ksdjfads",
+      "about": "ádasdasdasd",
+      "id": 2
     }
   ]
 }

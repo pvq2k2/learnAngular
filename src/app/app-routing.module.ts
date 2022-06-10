@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdminGuard } from './guard/admin.guard';
 import { ProductFormsComponent } from './pages/admin/products/product-forms/product-forms.component';
 import { ProductManagerComponent } from './pages/admin/products/product-manager/product-manager.component';
+import { UserFormsComponent } from './pages/admin/user/user-forms/user-forms.component';
 import { UserManagerComponent } from './pages/admin/user/user-manager/user-manager.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { AdminLayoutComponent } from './pages/layouts/admin/admin-layout/admin-layout.component';
@@ -45,6 +46,14 @@ const routes: Routes = [
           {
             path: '',
             component: UserManagerComponent
+          },
+          {
+            path: 'add',
+            component: UserFormsComponent
+          },
+          {
+            path: ':id/edit',
+            component: UserFormsComponent
           }
         ] 
       },
