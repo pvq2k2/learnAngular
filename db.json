@@ -19,6 +19,13 @@
       "id": 3
     }
   ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "Post",
+      "description": "atC72TkJKfIUMID6yISlicoQSd9gsNSFsNBvABvtE2jR4JB1j4FkFw"
+    }
+  ],
   "categorypost": [
     {
       "name": "Node JS",

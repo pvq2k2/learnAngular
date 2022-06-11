@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdminGuard } from './guard/admin.guard';
 import { CategoryPostFormComponent } from './pages/admin/categories/Post/category-post-form/category-post-form.component';
 import { CategoryPostComponent } from './pages/admin/categories/Post/category-post/category-post.component';
+import { PostManagerComponent } from './pages/admin/post/post-manager/post-manager.component';
 import { ProductFormsComponent } from './pages/admin/products/product-forms/product-forms.component';
 import { ProductManagerComponent } from './pages/admin/products/product-manager/product-manager.component';
 import { UserFormsComponent } from './pages/admin/user/user-forms/user-forms.component';
@@ -70,6 +71,23 @@ const routes: Routes = [
           {
             path: '',
             component: ProductManagerComponent
+          },
+          {
+            path: 'add',
+            component: ProductFormsComponent
+          },
+          {
+            path: ':id/edit',
+            component: ProductFormsComponent
+          }
+        ]
+      },
+      {
+        path: 'post', canActivate:[AdminGuard], 
+        children: [
+          {
+            path: '',
+            component: PostManagerComponent
           },
           {
             path: 'add',

@@ -29,6 +29,7 @@ import { WorkComponent } from './pages/work/work.component';
 import { UserFormsComponent } from './pages/admin/user/user-forms/user-forms.component';
 import { CategoryPostComponent } from './pages/admin/categories/Post/category-post/category-post.component';
 import { CategoryPostFormComponent } from './pages/admin/categories/Post/category-post-form/category-post-form.component';
+import { PostManagerComponent } from './pages/admin/post/post-manager/post-manager.component';
 
 registerLocaleData(en);
 
@@ -42,6 +43,7 @@ registerLocaleData(en);
     WebsiteContentComponent,
     ProductManagerComponent,
     ProductFormsComponent,
+    PostManagerComponent,
     UserManagerComponent,
     UserFormsComponent,
     CategoryPostComponent,
