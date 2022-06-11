@@ -8,7 +8,7 @@ const apiUrl = 'http://localhost:3000/categoryproject'
 @Injectable({
   providedIn: 'root'
 })
-export class CategoryPostService {
+export class CategoryProjectService {
 
   constructor(private http: HttpClient) { }
 

@@ -23,6 +23,10 @@
     {
       "name": "Node JS",
       "id": 1
+    },
+    {
+      "name": "HTML",
+      "id": 2
     }
   ],
   "categoryproject": [

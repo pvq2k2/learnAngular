@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminGuard } from './guard/admin.guard';
-import { CategoryPostComponent } from './pages/admin/categories/category-post/category-post.component';
+import { CategoryPostFormComponent } from './pages/admin/categories/Post/category-post-form/category-post-form.component';
+import { CategoryPostComponent } from './pages/admin/categories/Post/category-post/category-post.component';
 import { ProductFormsComponent } from './pages/admin/products/product-forms/product-forms.component';
 import { ProductManagerComponent } from './pages/admin/products/product-manager/product-manager.component';
 import { UserFormsComponent } from './pages/admin/user/user-forms/user-forms.component';
@@ -92,11 +93,11 @@ const routes: Routes = [
               },
               {
                 path: 'add',
-                component: ProductFormsComponent
+                component: CategoryPostFormComponent
               },
               {
                 path: ':id/edit',
-                component: ProductFormsComponent
+                component: CategoryPostFormComponent
               }
             ]
           },

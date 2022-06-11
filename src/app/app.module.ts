@@ -27,7 +27,8 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { WorkComponent } from './pages/work/work.component';
 import { UserFormsComponent } from './pages/admin/user/user-forms/user-forms.component';
-import { CategoryPostComponent } from './pages/admin/categories/category-post/category-post.component';
+import { CategoryPostComponent } from './pages/admin/categories/Post/category-post/category-post.component';
+import { CategoryPostFormComponent } from './pages/admin/categories/Post/category-post-form/category-post-form.component';
 
 registerLocaleData(en);
 
@@ -44,6 +45,7 @@ registerLocaleData(en);
     UserManagerComponent,
     UserFormsComponent,
     CategoryPostComponent,
+    CategoryPostFormComponent,
     SignInComponent,
     SignUpComponent,
     HomePageComponent,
