@@ -1,7 +1,7 @@
 <header class="bg-white">
     <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 flex justify-between">
-      <h1 id="headdingTitle" class="text-3xl font-bold text-gray-900">Product From</h1>
-      <a routerLink="/admin/product" class="sm:ml-3">
+      <h1 id="headdingTitle" class="text-3xl font-bold text-gray-900">Post From</h1>
+      <a routerLink="/admin/post" class="sm:ml-3">
       <button type="button" class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
       <svg class="-ml-1 mr-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
       <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -12,60 +12,72 @@
     </div>
     
   </header>
-    <div class="m-auto max-w-7xl pb-36 mt-5">
-    <div class="mt-5 md:mt-0 md:col-span-2">
-      <form #formProduct="ngForm" action="#" id="form-product" method="POST" (ngSubmit)="onSubmitProduct()">
+    <div class="m-auto max-w-7xl pb-36">
+    <div class="md:mt-0 md:col-span-2">
+      <form #formPost="ngForm" action="#" id="form-post" method="POST" (ngSubmit)="onSubmitPost()">
         <div class="shadow sm:rounded-md sm:overflow-hidden">
           <div class="px-4 py-5 bg-white space-y-6 sm:p-6">
 
             <div>
-            <label for="name" class="block text-sm font-medium text-gray-700">
-              Name
+            <label for="title" class="block text-sm font-medium text-gray-700">
+              Title
             </label>
             <div class="mt-1">
             <input 
             type="text" 
-            id="name-product" 
-            [(ngModel)]="product.name" 
+            id="name-post" 
+            [(ngModel)]="post.title" 
             name="name" 
             class="shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md p-2" 
             placeholder="Name..."
-            #name="ngModel"
+            #title="ngModel"
             required
             minlength="2"
             />
             </div>
-            <div *ngIf="name.errors">
-              <div *ngIf="name.errors?.['required'] && (name.dirty || name.touched)" class="text-red-500">
+            <div *ngIf="title.errors">
+              <div *ngIf="title.errors?.['required'] && (title.dirty || title.touched)" class="text-red-500">
                 Name is required
               </div>
-              <div *ngIf="name.errors?.['minlength'] && (name.dirty || name.touched)" class="text-red-500">
+              <div *ngIf="title.errors?.['minlength'] && (title.dirty || title.touched)" class="text-red-500">
                 Minlength 2 characters
               </div>
             </div>
           </div>
-
+          <div class="col-span-6 sm:col-span-3">
+            <label for="category" class="block text-sm font-medium text-gray-700">Category</label>
+            <select id="category" [(ngModel)]="post.categoryPostId" 
+            name="categoryPostId" autocomplete="category-name" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+              <option value="0">Select</option>
+              <option *ngFor="let category of categorys" name="category" value={{category.id}}>{{category.name}}</option>
+            </select>
+          </div>
 
             <div>
-              <label for="price" class="block text-sm font-medium text-gray-700">
-                Price
+              <label for="short_desc" class="block text-sm font-medium text-gray-700">
+                Shot Description
               </label>
               <div class="mt-1">
               <input
-              type="number" 
-              id="price-product" 
-              [(ngModel)]="product.price"
-              name="price" 
+              type="text" 
+              id="short_desc-post" 
+              [(ngModel)]="post.short_desc"
+              name="short_desc" 
               class="shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md p-2" 
-              placeholder="Price..."
-              #price="ngModel"
+              placeholder="Shot Description..."
+              #short_desc="ngModel"
               required
+              maxlength="100"
               />
               </div>
-              <div *ngIf="price.errors">
-                <div *ngIf="price.errors?.['required'] && (price.dirty || price.touched)" class="text-red-500">
-                  Price is required
+              <div *ngIf="short_desc.errors">
+                <div *ngIf="short_desc.errors?.['required'] && (short_desc.dirty || short_desc.touched)" class="text-red-500">
+                  Shot Description is required
                 </div>
+
+                <div *ngIf="short_desc.errors?.['maxlength'] && (short_desc.dirty || short_desc.touched)" class="text-red-500">
+                    Shot Description maxlength 100 characters
+                  </div>
               </div>
             </div>
 
@@ -75,8 +87,8 @@
                 </label>
                 <div class="mt-1">
                 <input type="text"
-                id="description-product" 
-                [(ngModel)]="product.description" 
+                id="description-post" 
+                [(ngModel)]="post.description" 
                 name="description" 
                 class="shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md p-2" 
                 placeholder="Description..."
@@ -95,25 +107,9 @@
                   </div>
                 </div>
               </div>
-
-            <!-- <div>
-              <label class="block text-sm font-medium text-gray-700">
-                Image
-              </label>
-              <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
-                <div class="space-y-1 text-center">
-                  <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
-                    <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                  <div class="flex text-sm text-gray-600">
-                      <input id="file-upload" name="file-upload" type="file">
-                  </div>
-                </div>
-              </div>
-            </div> -->
           </div>
           <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
-            <button [disabled]="!formProduct.valid" type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+            <button [disabled]="!formPost.valid" type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
             <svg class="-ml-1 mr-2 h-5 w-5" x-description="Heroicon name: solid/check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
             </svg>

@@ -30,6 +30,7 @@ import { UserFormsComponent } from './pages/admin/user/user-forms/user-forms.com
 import { CategoryPostComponent } from './pages/admin/categories/Post/category-post/category-post.component';
 import { CategoryPostFormComponent } from './pages/admin/categories/Post/category-post-form/category-post-form.component';
 import { PostManagerComponent } from './pages/admin/post/post-manager/post-manager.component';
+import { PostFormComponent } from './pages/admin/post/post-form/post-form.component';
 
 registerLocaleData(en);
 
@@ -44,6 +45,7 @@ registerLocaleData(en);
     ProductManagerComponent,
     ProductFormsComponent,
     PostManagerComponent,
+    PostFormComponent,
     UserManagerComponent,
     UserFormsComponent,
     CategoryPostComponent,

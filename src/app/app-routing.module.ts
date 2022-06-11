@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdminGuard } from './guard/admin.guard';
 import { CategoryPostFormComponent } from './pages/admin/categories/Post/category-post-form/category-post-form.component';
 import { CategoryPostComponent } from './pages/admin/categories/Post/category-post/category-post.component';
+import { PostFormComponent } from './pages/admin/post/post-form/post-form.component';
 import { PostManagerComponent } from './pages/admin/post/post-manager/post-manager.component';
 import { ProductFormsComponent } from './pages/admin/products/product-forms/product-forms.component';
 import { ProductManagerComponent } from './pages/admin/products/product-manager/product-manager.component';
@@ -91,11 +92,11 @@ const routes: Routes = [
           },
           {
             path: 'add',
-            component: ProductFormsComponent
+            component: PostFormComponent
           },
           {
             path: ':id/edit',
-            component: ProductFormsComponent
+            component: PostFormComponent
           }
         ]
       },
