@@ -1,7 +1,7 @@
 export interface IProject {
     id?: number | string;
     name: string,
-    image: string,
+    image: Array<any>,
     createAt: string,
     categoryProjectId: number | string,
     short_desc: string,
