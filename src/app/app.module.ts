@@ -27,6 +27,7 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { WorkComponent } from './pages/work/work.component';
 import { UserFormsComponent } from './pages/admin/user/user-forms/user-forms.component';
+import { CategoryPostComponent } from './pages/admin/categories/category-post/category-post.component';
 
 registerLocaleData(en);
 
@@ -42,6 +43,7 @@ registerLocaleData(en);
     ProductFormsComponent,
     UserManagerComponent,
     UserFormsComponent,
+    CategoryPostComponent,
     SignInComponent,
     SignUpComponent,
     HomePageComponent,

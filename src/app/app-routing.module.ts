@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminGuard } from './guard/admin.guard';
+import { CategoryPostComponent } from './pages/admin/categories/category-post/category-post.component';
 import { ProductFormsComponent } from './pages/admin/products/product-forms/product-forms.component';
 import { ProductManagerComponent } from './pages/admin/products/product-manager/product-manager.component';
 import { UserFormsComponent } from './pages/admin/user/user-forms/user-forms.component';
@@ -44,11 +45,6 @@ const routes: Routes = [
     path: 'admin',
     component: AdminLayoutComponent,
     children: [
-      // {
-      //   path: '',
-      //   redirectTo: 'student',
-      //   pathMatch: 'full'
-      // },
       {
         path: 'user', canActivate:[AdminGuard],
         children: [
@@ -82,6 +78,28 @@ const routes: Routes = [
             path: ':id/edit',
             component: ProductFormsComponent
           }
+        ]
+      },
+      {
+        path: 'category', canActivate:[AdminGuard], 
+        children: [
+          {
+            path: 'post',
+            children: [
+              { 
+                path: '',
+                component: CategoryPostComponent,
+              },
+              {
+                path: 'add',
+                component: ProductFormsComponent
+              },
+              {
+                path: ':id/edit',
+                component: ProductFormsComponent
+              }
+            ]
+          },
         ]
       },
 ]
