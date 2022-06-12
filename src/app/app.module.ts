@@ -33,6 +33,7 @@ import { PostManagerComponent } from './pages/admin/post/post-manager/post-manag
 import { PostFormComponent } from './pages/admin/post/post-form/post-form.component';
 import { ProjectManagerComponent } from './pages/admin/project/project-manager/project-manager.component';
 import { CategoryProjectComponent } from './pages/admin/categories/Project/category-project/category-project.component';
+import { CategoryProjectFormComponent } from './pages/admin/categories/Project/category-project-form/category-project-form.component';
 
 registerLocaleData(en);
 
@@ -54,6 +55,7 @@ registerLocaleData(en);
     CategoryPostComponent,
     CategoryPostFormComponent,
     CategoryProjectComponent,
+    CategoryProjectFormComponent,
     SignInComponent,
     SignUpComponent,
     HomePageComponent,
