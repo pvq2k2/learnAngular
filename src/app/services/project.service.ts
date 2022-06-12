@@ -15,12 +15,14 @@ export class ProjectService {
   getAllProject(): Observable<IProject[]> {
     return this.http.get<IProject[]>(apiUrl);
   }
-
+  getProjectLimit(): Observable<IProject[]> {
+    return this.http.get<IProject[]>(`${apiUrl}&_limit=3`)
+  }
   getProject(id: number | string): Observable<IProject> {
     return this.http.get<IProject>(`${apiUrl}/${id}`);
   }
 
-  addproject(project: IProject): Observable<IProject> {
+  addProject(project: IProject): Observable<IProject> {
     return this.http.post<IProject>(apiUrl, project);
   }
 

@@ -9,6 +9,7 @@ import { PostFormComponent } from './pages/admin/post/post-form/post-form.compon
 import { PostManagerComponent } from './pages/admin/post/post-manager/post-manager.component';
 import { ProductFormsComponent } from './pages/admin/products/product-forms/product-forms.component';
 import { ProductManagerComponent } from './pages/admin/products/product-manager/product-manager.component';
+import { ProjectFormComponent } from './pages/admin/project/project-form/project-form.component';
 import { ProjectManagerComponent } from './pages/admin/project/project-manager/project-manager.component';
 import { UserFormsComponent } from './pages/admin/user/user-forms/user-forms.component';
 import { UserManagerComponent } from './pages/admin/user/user-manager/user-manager.component';
@@ -112,11 +113,11 @@ const routes: Routes = [
           },
           {
             path: 'add',
-            component: PostFormComponent
+            component: ProjectFormComponent
           },
           {
             path: ':id/edit',
-            component: PostFormComponent
+            component: ProjectFormComponent
           }
         ]
       },
