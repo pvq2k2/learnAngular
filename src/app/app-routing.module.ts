@@ -7,6 +7,7 @@ import { PostFormComponent } from './pages/admin/post/post-form/post-form.compon
 import { PostManagerComponent } from './pages/admin/post/post-manager/post-manager.component';
 import { ProductFormsComponent } from './pages/admin/products/product-forms/product-forms.component';
 import { ProductManagerComponent } from './pages/admin/products/product-manager/product-manager.component';
+import { ProjectManagerComponent } from './pages/admin/project/project-manager/project-manager.component';
 import { UserFormsComponent } from './pages/admin/user/user-forms/user-forms.component';
 import { UserManagerComponent } from './pages/admin/user/user-manager/user-manager.component';
 import { BlogComponent } from './pages/blog/blog.component';
@@ -89,6 +90,23 @@ const routes: Routes = [
           {
             path: '',
             component: PostManagerComponent
+          },
+          {
+            path: 'add',
+            component: PostFormComponent
+          },
+          {
+            path: ':id/edit',
+            component: PostFormComponent
+          }
+        ]
+      },
+      {
+        path: 'project', canActivate:[AdminGuard], 
+        children: [
+          {
+            path: '',
+            component: ProjectManagerComponent
           },
           {
             path: 'add',
