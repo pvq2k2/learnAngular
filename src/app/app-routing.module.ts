@@ -37,17 +37,16 @@ const routes: Routes = [
           path: 'work',
           component: WorkComponent
         },
-        {
-          path: 'signin',
-          component: SignInComponent
-        },
-        {
-          path: 'signup',
-          component: SignUpComponent
-        },
     ]
   },
- 
+  {
+    path: 'signin',
+    component: SignInComponent
+  },
+  {
+    path: 'signup',
+    component: SignUpComponent
+  },
   {
     path: 'admin',
     component: AdminLayoutComponent,

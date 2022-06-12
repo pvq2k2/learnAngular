@@ -13,8 +13,8 @@ import { UserService } from 'src/app/services/user.service';
 export class UserFormsComponent implements OnInit {
   user: IUser = {
     name: '',
-    password: '12345',
     email: '',
+    password: '12345',
     position: '',
     about: '',
     cv: '',
@@ -70,21 +70,22 @@ export class UserFormsComponent implements OnInit {
   onSubmitUser() {
     const id = +this.activateRoute.snapshot.paramMap.get('id')!;
     if (id) {
-      this.userService.updateUser(this.user).subscribe(() => {
-        this.notification.success('Success','')
+        this.userService.getUser(id).subscribe(data => {
+          this.user = data
+        })
+        this.userService.updateUser(this.user).subscribe(() => {
+          this.notification.success('Success','')
+          setTimeout(() => {
+            this.routes.navigate(['admin/user']);
+          }, 2000)
+        })
+    }
+      this.userService.addUser(this.user).subscribe(() => {
+        this.notification.success('Success','');
         setTimeout(() => {
           this.routes.navigate(['admin/user']);
         }, 2000)
-      })
-    }
-    console.log(this.user);
-    
-    this.userService.addUser(this.user).subscribe(() => {
-      this.notification.success('Success','');
-      setTimeout(() => {
-        this.routes.navigate(['admin/user']);
-      }, 2000)
-    });
+      });
 
   }
 }

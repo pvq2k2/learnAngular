@@ -29,6 +29,17 @@
       "id": 1
     }
   ],
+  "projects": [
+    {
+      "name": "Product D",
+      "image": "http://res.cloudinary.com/assignmentjs/image/upload/v1655045942/angular/jfdi7gjt9xyhjx7rc5hj.jpg",
+      "createAt": 2022,
+      "categoryProjectId": "1",
+      "short_desc": "fsgdfgsdsgssdfgsd",
+      "description": "adsfjkffhhjksajkhfjhkasfjkasfjhlashjlkfjhkaskfljsajhfjsakfjhklsljkfhsajlkfjsdafjksadfjksadhlkjfjsdhfjkasdjfklsajkfjsdhlạhksadjhkfsal",
+      "id": 1
+    }
+  ],
   "categorypost": [
     {
       "name": "Node JS",
@@ -52,19 +63,13 @@
   "users": [
     {
       "email": "quyetpvph15476@fpt.edu.vn",
-      "password": "$2a$10$lp0Bt4ldkdRZQ3xY0siwt.rQlcB/LotmuS0QCfSiGQEoyDmJ/0vKa",
+      "password": "$2a$10$jWhQx5lL.lEhT2pc8fRjlu4RLM.QBsX/fM/JRrhyrfTPTIVqbwxf.",
       "name": "Quyet",
-      "id": 1,
       "position": "Front End Developer",
-      "about": "Quyetdk"
-    },
-    {
-      "email": "quyetpvph15476@fpt.edu.vnn",
-      "password": "$2a$10$S8/H1CsdjW8J.fVLa9b6JuD1kbtg8kv.RcclvsaNijtGflg40240.",
-      "name": "quyet",
-      "position": "ksdjfads",
-      "about": "ádasdasdasd",
-      "id": 2
+      "about": "Quyetdk",
+      "cv": "http://res.cloudinary.com/assignmentjs/image/upload/v1655054429/angular/jsb8qhaz3o38ju7tm4hi.jpg",
+      "img": "http://res.cloudinary.com/assignmentjs/image/upload/v1655054427/angular/lkn3dzsn9qr9xpwb4pei.jpg",
+      "id": 1
     }
   ]
 }

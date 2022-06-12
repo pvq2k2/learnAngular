@@ -53,6 +53,7 @@
   }
   .information__img img {
     width: 243px;
+    border-radius: 100%;
   }
   /** rectent_posts **/
   .rectent_posts {

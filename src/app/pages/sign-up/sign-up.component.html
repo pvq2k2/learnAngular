@@ -1,5 +1,5 @@
 <div class="bg_gradient">
-  <div class="relative inline-block left-1/2 -translate-x-1/2 translate-y-1/2">
+  <!-- <div class="relative inline-block left-1/2 -translate-x-1/2 translate-y-1/2">
     <div class="box bg-white rounded-3xl p-5 w-[500px]">
     <div>
       <h1 class="mx-auto text-center uppercase">Register</h1>
@@ -36,6 +36,30 @@
       />
     </nz-form-control>
   </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="img" nzRequired>Img</nz-form-label>
+    <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input your img!">
+       <input
+        nz-input
+        type="password"
+        id="password"
+        formControlName="password"
+
+      />
+      <nz-upload
+      nzAction="https://api.cloudinary.com/v1_1/assignmentjs/image/upload"
+      [nzHeaders]="{ authorization: 'authorization-text' }"
+      (nzChange)="handleChange($event)"
+    >
+      <button nz-button>
+        <i nz-icon nzType="upload"></i>
+        Click to Upload
+      </button>
+    </nz-upload>
+    </nz-form-control>
+  </nz-form-item>
+
+
   <nz-form-item nz-row class="register-area">
     <nz-form-control [nzSpan]="14" [nzOffset]="6">
       <button nz-button nzType="primary">Register</button>
@@ -44,82 +68,180 @@
   <a routerLink="/signin" class="text-center">Or login now!</a>
 </form>
 </div>
-</div>
-</div>
-<!-- <header class="bg-white">
-    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 flex justify-between">
-      <h1 id="headdingTitle" class="text-3xl font-bold text-gray-900">Product From</h1>
-      <a routerLink="/admin/product" class="sm:ml-3">
-      <button type="button" class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-      <svg class="-ml-1 mr-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-      <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
-      </svg>
-        Close
-      </button>
-    </a>
-    </div>
-    
-  </header>
-    <div class="m-auto max-w-7xl pb-36 mt-5">
-    <div class="mt-5 md:mt-0 md:col-span-2">
-      <form action="#" id="form-product" method="POST" (ngSubmit)="onSignUp()">
-        <div class="shadow sm:rounded-md sm:overflow-hidden">
-          <div class="px-4 py-5 bg-white space-y-6 sm:p-6">
+</div> -->
 
-            <div>
-            <label for="name" class="block text-sm font-medium text-gray-700">
-              Name
-            </label>
-            <div class="mt-1">
-            <input type="text" id="name-product" [(ngModel)]="user.name" name="name" class="shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md p-2" placeholder="Name...">
+
+  <div class="mx-auto max-w-lg">
+  <div class="md:col-span-2">
+    <form action="#" #formUser="ngForm" id="form-user" method="POST" (ngSubmit)="onSignUp()">
+      <div class="shadow sm:rounded-md sm:overflow-hidden">
+        <div class="px-4 py-3 bg-white space-y-6 sm:p-6">
+          <span class="mx-auto text-left uppercase">Register</span>
+
+          <div>
+          <label for="name" class="block text-sm font-medium text-gray-700">
+            Name
+          </label>
+          <div class="mt-1">
+          <input 
+          type="text" 
+          id="name-user" 
+          [(ngModel)]="user.name" 
+          name="name" 
+          class="shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md p-2" 
+          placeholder="Name..."
+          #name="ngModel"
+          required
+          minlength="2"
+          >
+          <div *ngIf="name.errors">
+            <div *ngIf="name.errors?.['required'] && (name.dirty || name.touched)" class="text-red-500">
+              Name is required
+            </div>
+            <div *ngIf="name.errors?.['minlength'] && (name.dirty || name.touched)" class="text-red-500">
+              Minlength 2 characters
             </div>
           </div>
-
-
-            <div>
-              <label for="price" class="block text-sm font-medium text-gray-700">
-                email
-              </label>
-              <div class="mt-1">
-              <input type="text" id="price-product" [(ngModel)]="user.email" name="email" class="shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md p-2" placeholder="Price...">
-              </div>
-            </div>
-
-            <div>
-                <label for="description" class="block text-sm font-medium text-gray-700">
-                  Description
-                </label>
-                <div class="mt-1">
-                <input type="text" id="description-product" [(ngModel)]="user.password" name="password" class="shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md p-2" placeholder="Description...">
-                </div>
-              </div> -->
-
-            <!-- <div>
-              <label class="block text-sm font-medium text-gray-700">
-                Image
-              </label>
-              <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
-                <div class="space-y-1 text-center">
-                  <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
-                    <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                  <div class="flex text-sm text-gray-600">
-                      <input id="file-upload" name="file-upload" type="file">
-                  </div>
-                </div>
-              </div>
-            </div> -->
-          <!-- </div>
-          <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
-            <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-            <svg class="-ml-1 mr-2 h-5 w-5" x-description="Heroicon name: solid/check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-            </svg>
-            Save
-            </button>
           </div>
         </div>
-      </form>
-    </div>
-  </div> -->
+
+        <div>
+          <label for="password" class="block text-sm font-medium text-gray-700">
+            Password
+          </label>
+          <div class="mt-1">
+          <input 
+          type="text" 
+          id="password-user" 
+          [(ngModel)]="user.password" 
+          name="password" 
+          class="shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md p-2" 
+          placeholder="Password..."
+          #password="ngModel"
+          required
+          minlength="8"
+          >
+          </div>
+          <div *ngIf="password.errors">
+            <div *ngIf="password.errors?.['required'] && (password.dirty || password.touched)" class="text-red-500">
+              Password is required
+            </div>
+            <div *ngIf="password.errors?.['minlength'] && (password.dirty || password.touched)" class="text-red-500">
+              Password Minlength 2 characters
+            </div>
+          </div>
+        </div>
+
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-700">
+              Email
+            </label>
+            <div class="mt-1">
+            <input 
+            type="email" 
+            id="email-user" 
+            [(ngModel)]="user.email" 
+            name="email" 
+            class="shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md p-2" 
+            placeholder="Email..."
+            #email="ngModel"
+            required
+            >
+            <div *ngIf="email.errors">
+              <div *ngIf="email.errors?.['required'] && (email.dirty || email.touched)" class="text-red-500">
+                Email is required
+              </div>
+              <div *ngIf="email.errors?.['minlength'] && (email.dirty || email.touched)" class="text-red-500">
+                Minlength 2 characters
+              </div>
+            </div>
+            </div>
+          </div>
+
+          <div>
+              <label for="position" class="block text-sm font-medium text-gray-700">
+                Position
+              </label>
+              <div class="mt-1">
+              <input 
+              type="text" 
+              id="position-product" 
+              [(ngModel)]="user.position" 
+              name="position" 
+              class="shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md p-2" 
+              placeholder="Position..."
+              #position="ngModel"
+              required
+              minlength="2"
+              >
+              <div *ngIf="position.errors">
+                <div *ngIf="position.errors?.['required'] && (position.dirty || position.touched)" class="text-red-500">
+                  Position is required
+                </div>
+                <div *ngIf="position.errors?.['minlength'] && (position.dirty || position.touched)" class="text-red-500">
+                  Minlength 2 characters
+                </div>
+              </div>
+              </div>
+            </div>
+
+            <div>
+              <label for="about" class="block text-sm font-medium text-gray-700">
+                About
+              </label>
+              <div class="mt-1">
+              <input 
+              type="text" 
+              id="about-product" 
+              [(ngModel)]="user.about" 
+              name="about" 
+              class="shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md p-2" 
+              placeholder="About..."
+              #about="ngModel"
+              required
+              minlength="2"
+              >
+              <div *ngIf="about.errors">
+                <div *ngIf="about.errors?.['required'] && (about.dirty || about.touched)" class="text-red-500">
+                  About is required
+                </div>
+                <div *ngIf="about.errors?.['minlength'] && (about.dirty || about.touched)" class="text-red-500">
+                  Minlength 2 characters
+                </div>
+              </div>
+              </div>
+            </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">
+              Image
+            </label>
+                <div class="flex text-sm text-gray-600 pt-2">
+                    <input id="file-upload" (change)="uploadImg($event)" type="file">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700">
+              CV
+            </label>
+                <div class="flex text-sm text-gray-600 pt-2">
+                    <input id="file-upload" (change)="uploadCV($event)" type="file">
+            </div>
+          </div>
+        </div>
+        <div class=" py-3 bg-gray-50 text-right sm:px-6 flex justify-between">
+          <a routerLink="/signin" class="text-center">Or login now!</a>
+          <button type="submit" [disabled]="!formUser.valid" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+          <svg class="-ml-1 mr-2 h-5 w-5" x-description="Heroicon name: solid/check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+          </svg>
+          Save
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+</div>
+
 

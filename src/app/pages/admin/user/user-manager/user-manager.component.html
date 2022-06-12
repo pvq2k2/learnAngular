@@ -29,9 +29,9 @@
               <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 Name
               </th>
-              <!-- <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 Image
-              </th> -->
+              </th>
               <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 position
               </th>
@@ -56,9 +56,9 @@
                 {{ user.name }}
               </span>
             </td>
-            <!-- <td class="px-6 py-4 whitespace-nowrap w-52">
-            <img width="50%" src="${img}">
-          </td> -->
+            <td class="px-6 py-4 whitespace-nowrap w-52">
+              <img width="50%" [src]="user.img">
+            </td>
           <td class="px-6 py-4 whitespace-nowrap">
           <span class="px-2 inline-flex text-sm leading-5 font-semibold">
             {{ user.position }}
@@ -71,7 +71,7 @@
         </td>
         <td class="px-6 py-4 text-sm font-medium">
         <!-- <button class="btn btn-info mr-2 text-white" (click)="onGetProduct(user.id!)">Info</button> -->
-        <button class="btn btn-warning mr-2" routerLink="{{ user.id }}/edit">Edit</button>
+        <!-- <button class="btn btn-warning mr-2" routerLink="{{ user.id }}/edit">Edit</button> -->
         
         <button 
           nz-popconfirm
