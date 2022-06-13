@@ -36,20 +36,20 @@
         </div>
         <div class="rectent_posts__row-item-rectent">
 
-            <div class="item_recent" *ngFor="let post of posts">
+            <div class="item_recent" *ngFor="let blog of blogs">
                 <div class="item_rectent__title">
-                    <h2>{{ post.title }}</h2>
+                    <h2>{{ blog.title }}</h2>
                 </div>
                 <div class="item_rectent__row-date-category">
                     <div class="date">
-                        <span>{{ post.createAt }}</span>
+                        <span>{{ blog.createAt }}</span>
                     </div>
                     <div class="category">
-                        <span>{{ post.categoryPostId == 1 ? "HTML5" : "NodeJS" }}</span>
+                        <span>{{ blog.categoryBlog?.name }}</span>
                     </div>
                 </div>
                 <div class="item_rectent__description">
-                    <p>{{post.short_desc}}</p>
+                    <p>{{blog.short_desc}}</p>
                 </div>
             </div>
         </div>
@@ -65,24 +65,24 @@
             </div>
         <div class="feature_works__row-item-work">
 
-            <div class="item_work cursor-pointer" *ngFor="let project of projects" routerLink="work/{{ project.id }}">
+            <div class="item_work cursor-pointer" *ngFor="let work of works" routerLink="work/{{ work.id }}">
                 <div class="item_work__img">
-                    <img [src]='project.image' alt='Rectangle-30'/>
+                    <img [src]='work.image' alt='Rectangle-30'/>
                 </div>
                 <div class="item_work__content">
                     <div class="item_work__title">
-                        <h2>{{ project.name }}</h2>
+                        <h2>{{ work.name }}</h2>
                     </div>
                     <div class="item_work__row-date-category">
                         <div class="date">
-                         <span>{{ project.createAt }}</span>
+                         <span>{{ work.createAt }}</span>
                         </div>
                         <div class="category">
-                            <a>{{ project.categoryProjectId == 1 ? "HTML5" : "NodeJS" }}</a>
+                            <a>{{ work.category?.name }}</a>
                         </div>
                     </div>
                     <div class="item_work__description">
-                        <p>{{ project.short_desc }}</p>
+                        <p>{{ work.short_desc }}</p>
                     </div>
                 </div>
             </div>

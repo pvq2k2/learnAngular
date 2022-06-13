@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { IPost } from 'src/app/models/Post';
-import { IProject } from 'src/app/models/Project';
+import { IBlog } from 'src/app/models/Blog';
 import { IUser } from 'src/app/models/User';
-import { PostService } from 'src/app/services/post.service';
-import { ProjectService } from 'src/app/services/project.service';
+import { IWork } from 'src/app/models/Work';
+import { BlogService } from 'src/app/services/blog.service';
+import { WorkService } from 'src/app/services/work.service';
+
 
 @Component({
   selector: 'app-home-page',
@@ -12,25 +13,25 @@ import { ProjectService } from 'src/app/services/project.service';
 })
 export class HomePageComponent implements OnInit {
   user: IUser = JSON.parse(localStorage.getItem('user')!);
-  posts!: IPost[];
-  projects!: IProject[];
+  blogs!: IBlog[];
+  works!: IWork[];
   constructor(
-    private postService: PostService,
-    private projectService: ProjectService
+    private blogService: BlogService,
+    private workService: WorkService
   ) { }
 
   ngOnInit(): void {
-    this.onGetPost();
-    this.onGetProject();
+    this.onGetBlogLimit();
+    this.onGetWorkLimit();
   }
-  onGetPost() {
-    this.postService.getPostLimit().subscribe((data) => {
-      this.posts = data
+  onGetBlogLimit() {
+    this.blogService.getBlogLimit().subscribe((data) => {
+      this.blogs = data
     })
   }
-  onGetProject(){
-    this.projectService.getProjectLimit().subscribe((data) => {
-      this.projects = data
+  onGetWorkLimit(){
+    this.workService.getWorkLimit().subscribe((data) => {
+      this.works = data
     })
   }
 
