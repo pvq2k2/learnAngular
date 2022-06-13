@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { IProject } from 'src/app/models/Project';
-import { ProjectService } from 'src/app/services/project.service';
+import { IWork } from 'src/app/models/Work';
+import { WorkService } from 'src/app/services/work.service';
 
 @Component({
   selector: 'app-work',
@@ -8,15 +8,15 @@ import { ProjectService } from 'src/app/services/project.service';
   styleUrls: ['./work.component.css']
 })
 export class WorkComponent implements OnInit {
-  projects!: IProject[];
-  constructor(private projectService: ProjectService) { }
+  works!: IWork[];
+  constructor(private workService: WorkService) { }
 
   ngOnInit(): void {
-    this.onGetALlProject();
+    this.onGetAllWork();
   }
-  onGetALlProject() {
-    this.projectService.getAllProject().subscribe((data) => {
-      this.projects = data
+  onGetAllWork() {
+    this.workService.getAllWork().subscribe((data) => {
+      this.works = data
     })
   }
 
