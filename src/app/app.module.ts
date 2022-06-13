@@ -27,14 +27,6 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { WorkComponent } from './pages/work/work.component';
 import { UserFormsComponent } from './pages/admin/user/user-forms/user-forms.component';
-import { CategoryPostComponent } from './pages/admin/categories/Post/category-post/category-post.component';
-import { CategoryPostFormComponent } from './pages/admin/categories/Post/category-post-form/category-post-form.component';
-import { PostManagerComponent } from './pages/admin/post/post-manager/post-manager.component';
-import { PostFormComponent } from './pages/admin/post/post-form/post-form.component';
-import { ProjectManagerComponent } from './pages/admin/project/project-manager/project-manager.component';
-import { CategoryProjectComponent } from './pages/admin/categories/Project/category-project/category-project.component';
-import { CategoryProjectFormComponent } from './pages/admin/categories/Project/category-project-form/category-project-form.component';
-import { ProjectFormComponent } from './pages/admin/project/project-form/project-form.component';
 import { WorkDetailComponent } from './pages/work-detail/work-detail.component';
 import { BlogManagerComponent } from './pages/admin/blog/blog-manager/blog-manager.component';
 import { BlogFormComponent } from './pages/admin/blog/blog-form/blog-form.component';
@@ -57,20 +49,12 @@ registerLocaleData(en);
     WebsiteContentComponent,
     ProductManagerComponent,
     ProductFormsComponent,
-    PostManagerComponent,
-    PostFormComponent,
     BlogManagerComponent,
     BlogFormComponent,
     WorkManagerComponent,
     WorkFormComponent,
     UserManagerComponent,
     UserFormsComponent,
-    ProjectManagerComponent,
-    ProjectFormComponent,
-    CategoryPostComponent,
-    CategoryPostFormComponent,
-    CategoryProjectComponent,
-    CategoryProjectFormComponent,
     CategoryBlogComponent,
     CategoryBlogFormComponent,
     CategoryWorkComponent,

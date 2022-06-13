@@ -5,18 +5,10 @@ import { BlogFormComponent } from './pages/admin/blog/blog-form/blog-form.compon
 import { BlogManagerComponent } from './pages/admin/blog/blog-manager/blog-manager.component';
 import { CategoryBlogFormComponent } from './pages/admin/categories/blog/category-blog-form/category-blog-form.component';
 import { CategoryBlogComponent } from './pages/admin/categories/blog/category-blog/category-blog.component';
-import { CategoryPostFormComponent } from './pages/admin/categories/Post/category-post-form/category-post-form.component';
-import { CategoryPostComponent } from './pages/admin/categories/Post/category-post/category-post.component';
-import { CategoryProjectFormComponent } from './pages/admin/categories/Project/category-project-form/category-project-form.component';
-import { CategoryProjectComponent } from './pages/admin/categories/Project/category-project/category-project.component';
 import { CategoryWorkFormComponent } from './pages/admin/categories/work/category-work-form/category-work-form.component';
 import { CategoryWorkComponent } from './pages/admin/categories/work/category-work/category-work.component';
-import { PostFormComponent } from './pages/admin/post/post-form/post-form.component';
-import { PostManagerComponent } from './pages/admin/post/post-manager/post-manager.component';
 import { ProductFormsComponent } from './pages/admin/products/product-forms/product-forms.component';
 import { ProductManagerComponent } from './pages/admin/products/product-manager/product-manager.component';
-import { ProjectFormComponent } from './pages/admin/project/project-form/project-form.component';
-import { ProjectManagerComponent } from './pages/admin/project/project-manager/project-manager.component';
 import { UserFormsComponent } from './pages/admin/user/user-forms/user-forms.component';
 import { UserManagerComponent } from './pages/admin/user/user-manager/user-manager.component';
 import { WorkFormComponent } from './pages/admin/work/work-form/work-form.component';
@@ -105,23 +97,6 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'post', canActivate:[AdminGuard], 
-        children: [
-          {
-            path: '',
-            component: PostManagerComponent
-          },
-          {
-            path: 'add',
-            component: PostFormComponent
-          },
-          {
-            path: ':id/edit',
-            component: PostFormComponent
-          }
-        ]
-      },
-      {
         path: 'blog', canActivate:[AdminGuard], 
         children: [
           {
@@ -156,59 +131,8 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'project', canActivate:[AdminGuard], 
-        children: [
-          {
-            path: '',
-            component: ProjectManagerComponent
-          },
-          {
-            path: 'add',
-            component: ProjectFormComponent
-          },
-          {
-            path: ':id/edit',
-            component: ProjectFormComponent
-          }
-        ]
-      },
-      {
         path: 'category', canActivate:[AdminGuard], 
         children: [
-          {
-            path: 'post',
-            children: [
-              { 
-                path: '',
-                component: CategoryPostComponent,
-              },
-              {
-                path: 'add',
-                component: CategoryPostFormComponent
-              },
-              {
-                path: ':id/edit',
-                component: CategoryPostFormComponent
-              }
-            ]
-          },
-          {
-            path: 'project',
-            children: [
-              {
-                path: '',
-                component: CategoryProjectComponent
-              },
-              {
-                path: 'add',
-                component: CategoryProjectFormComponent
-              },
-              {
-                path: ':id/edit',
-                component: CategoryProjectFormComponent
-              }
-            ]
-          },
           {
             path: 'blog',
             children: [
