@@ -8,76 +8,25 @@
     <section class="rectent_posts">
         <div class="container">
             <div class="rectent_posts__row-item-rectent">
-                <div class="item_recent">
+                <div class="item_recent" *ngFor="let post of posts">
                     <div class="item_rectent__title">
-                        <h2>UI Interactions of the week</h2>
+                        <h2>{{ post.title }}</h2>
                     </div>
                     <div class="item_rectent__row-date-category">
                         <div class="date">
-                            <span>12 Feb 2019</span>
+                            <span>{{ post.createAt }}</span>
                         </div>
                         <div class="category">
-                            <span>Express, Handlebars</span>
+                            <span>{{ post.categoryPostId == 1 ? "HTML5" : "NodeJS" }}</span>
                         </div>
                     </div>
                     <div class="item_rectent__description">
-                        <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+                        <p>{{ post.short_desc }}</p>
                     </div>
                 </div>
 
 
-                <div class="item_recent">
-                    <div class="item_rectent__title">
-                        <h2>UI Interactions of the week</h2>
-                    </div>
-                    <div class="item_rectent__row-date-category">
-                        <div class="date">
-                            <span>12 Feb 2019</span>
-                        </div>
-                        <div class="category">
-                            <span>Express, Handlebars</span>
-                        </div>
-                    </div>
-                    <div class="item_rectent__description">
-                        <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
-                    </div>
-                </div>
-
-
-                <div class="item_recent">
-                    <div class="item_rectent__title">
-                        <h2>UI Interactions of the week</h2>
-                    </div>
-                    <div class="item_rectent__row-date-category">
-                        <div class="date">
-                            <span>12 Feb 2019</span>
-                        </div>
-                        <div class="category">
-                            <span>Express, Handlebars</span>
-                        </div>
-                    </div>
-                    <div class="item_rectent__description">
-                        <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
-                    </div>
-                </div>
-
-
-                <div class="item_recent">
-                    <div class="item_rectent__title">
-                        <h2>UI Interactions of the week</h2>
-                    </div>
-                    <div class="item_rectent__row-date-category">
-                        <div class="date">
-                            <span>12 Feb 2019</span>
-                        </div>
-                        <div class="category">
-                            <span>Express, Handlebars</span>
-                        </div>
-                    </div>
-                    <div class="item_rectent__description">
-                        <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
-                    </div>
-                </div>
+    
 
 
                 
