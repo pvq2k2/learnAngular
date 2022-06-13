@@ -8,27 +8,29 @@
     <section class="feature_works">
         <div class="container">
             <div class="feature_works__row-item-work">
-                <div class="item_work">
+                <div class="item_work" *ngFor="let project of projects">
                     <div class="item_work__img">
-                        <img src='https://i.postimg.cc/0yWmtrcg/Rectangle-30.jpg' alt='Rectangle-30'/>
+                        <img [src]='project.image' alt='Rectangle-30'/>
                     </div>
                     <div class="item_work__content">
                         <div class="item_work__title">
-                            <h2>Designing Dashboards</h2>
+                            <h2>{{ project.name }}</h2>
                         </div>
                         <div class="item_work__row-date-category">
                             <div class="date">
-                             <span>2020</span>
+                             <span>{{ project.createAt }}</span>
                             </div>
                             <div class="category">
-                                <span>Dashboard</span>
+                                <span>{{ project.categoryProjectId == 1 ? "HTML5" : "NodeJS" }}</span>
                             </div>
                         </div>
                         <div class="item_work__description">
-                            <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+                            <p>{{ project.short_desc }}</p>
                         </div>
                     </div>
                 </div>
+
+
             </div>
         </div>
     </section>
