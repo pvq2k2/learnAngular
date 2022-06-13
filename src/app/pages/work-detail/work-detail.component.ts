@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { IProject } from 'src/app/models/Project';
-import { ProjectService } from 'src/app/services/project.service';
+import { IWork } from 'src/app/models/Work';
+import { WorkService } from 'src/app/services/work.service';
 
 @Component({
   selector: 'app-work-detail',
@@ -9,16 +9,16 @@ import { ProjectService } from 'src/app/services/project.service';
   styleUrls: ['./work-detail.component.css']
 })
 export class WorkDetailComponent implements OnInit {
-  project!: IProject;
+  work!: IWork;
   constructor(
     private activateRoute: ActivatedRoute,
-    private projectService: ProjectService,
+    private workService: WorkService,
   ) { }
 
   ngOnInit(): void {
     const id = +this.activateRoute.snapshot.paramMap.get('id')!;
-    this.projectService.getProject(id).subscribe(data => {
-      this.project = data
+    this.workService.getWork(id).subscribe(data => {
+      this.work = data
     })
   }
 

@@ -5,23 +5,23 @@
           <div class="item_work">
             <div class="item_work__content">
               <div class="item_work__title">
-                <h2>{{ project.name }}</h2>
+                <h2>{{ work.name }}</h2>
               </div>
               <div class="item_work__row-date-category">
                 <div class="date">
-                  <span>{{ project.createAt }}</span>
+                  <span>{{ work.createAt }}</span>
                 </div>
                 <div class="category">
-                  <span>{{ project.categoryProjectId == 1 ? "HTML5" : "NodeJS" }}</span>
+                  <span>{{ work.category?.name }}</span>
                 </div>
               </div>
               <div class="item_work__description">
                 <p>
-                  {{ project.description }}
+                  {{ work.description }}
                 </p>
               </div>
               <div class="item_work__img">
-                <img [src]="project.image" alt="" with="100%"/>
+                <img [src]="work.image" alt="" with="100%"/>
               </div>
             </div>
           </div>
