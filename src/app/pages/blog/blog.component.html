@@ -8,20 +8,20 @@
     <section class="rectent_posts">
         <div class="container">
             <div class="rectent_posts__row-item-rectent">
-                <div class="item_recent" *ngFor="let post of posts">
+                <div class="item_recent" *ngFor="let blog of blogs">
                     <div class="item_rectent__title">
-                        <h2>{{ post.title }}</h2>
+                        <h2>{{ blog.title }}</h2>
                     </div>
                     <div class="item_rectent__row-date-category">
                         <div class="date">
-                            <span>{{ post.createAt }}</span>
+                            <span>{{ blog.createAt }}</span>
                         </div>
                         <div class="category">
-                            <span>{{ post.categoryPostId == 1 ? "HTML5" : "NodeJS" }}</span>
+                            <span>{{ blog.categoryBlog?.name }}</span>
                         </div>
                     </div>
                     <div class="item_rectent__description">
-                        <p>{{ post.short_desc }}</p>
+                        <p>{{ blog.short_desc }}</p>
                     </div>
                 </div>
 

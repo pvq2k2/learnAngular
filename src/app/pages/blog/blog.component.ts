@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { IPost } from 'src/app/models/Post';
-import { PostService } from 'src/app/services/post.service';
+import { IBlog } from 'src/app/models/Blog';
+import { BlogService } from 'src/app/services/blog.service';
 
 @Component({
   selector: 'app-blog',
@@ -8,17 +8,17 @@ import { PostService } from 'src/app/services/post.service';
   styleUrls: ['./blog.component.css']
 })
 export class BlogComponent implements OnInit {
-  posts!: IPost[];
+  blogs!: IBlog[];
   constructor(
-    private postService: PostService
+    private blogService: BlogService
   ) { }
 
   ngOnInit(): void {
-    this.onGetAllPost();
+    this.onGetAllBlog();
   }
-  onGetAllPost() {
-    this.postService.getAllPost().subscribe(data => {
-      this.posts = data
+  onGetAllBlog() {
+    this.blogService.getAllBlogs().subscribe(data => {
+      this.blogs = data
     })
   }
 }
