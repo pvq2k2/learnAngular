@@ -17,7 +17,7 @@ export class CategoryBlogService {
   }
 
   getCategoryBlog(id: number | string): Observable<ICategories> {
-    return this.http.get<ICategories>(`${apiUrl}/${id}?_embed=post`);
+    return this.http.get<ICategories>(`${apiUrl}/${id}?_embed=blogs`);
   }
 
   addCategoryBlog(category: ICategories): Observable<ICategories> {

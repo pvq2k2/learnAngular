@@ -4,6 +4,7 @@ import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { IBlog } from 'src/app/models/Blog';
 import { ICategories } from 'src/app/models/Categories';
 import { BlogService } from 'src/app/services/blog.service';
+import { CategoryBlogService } from 'src/app/services/category-blog.service';
 
 @Component({
   selector: 'app-blog-form',
@@ -12,7 +13,7 @@ import { BlogService } from 'src/app/services/blog.service';
 })
 export class BlogFormComponent implements OnInit {
 
-  // categorys!: ICategories[];
+  categorys!: ICategories[];
   date = new Date().toLocaleDateString("vi-VI");
   blog: IBlog = {
     title: '',
@@ -24,7 +25,7 @@ export class BlogFormComponent implements OnInit {
   constructor(
     private activateRoute: ActivatedRoute,
     private blogService: BlogService,
-    // private categoryPostService: CategoryPostService,
+    private categoryBlogService: CategoryBlogService,
     private routes: Router,
     private notification: NzNotificationService ) { }
 
@@ -35,13 +36,13 @@ export class BlogFormComponent implements OnInit {
         this.blog = data
       })
     }
-    // this.onGetAllCategoryPost();
+    this.onGetAllCategoryBlog();
   }
-  // onGetAllCategoryPost() {
-  //   this.categoryPostService.getAllCategoryPost().subscribe((data) => {
-  //     this.categorys = data;
-  //   })
-  // }
+  onGetAllCategoryBlog() {
+    this.categoryBlogService.getAllCategoryBlog().subscribe((data) => {
+      this.categorys = data;
+    })
+  }
   onSubmitBlog() {
     const id = +this.activateRoute.snapshot.paramMap.get('id')!;
     if (id) {

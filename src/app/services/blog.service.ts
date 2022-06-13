@@ -20,6 +20,10 @@ export class BlogService {
     return this.http.get<IBlog>(`${apiUrl}/${id}?_expand=categoryBlog`) 
   };
 
+  getBlogLimit(): Observable<IBlog[]> {
+    return this.http.get<IBlog[]>(`${apiUrl}?_limit=2`)
+  }
+  
   addBlog (blog: IBlog):Observable<IBlog> {
     return this.http.post<IBlog>(apiUrl, blog)
   };

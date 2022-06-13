@@ -19,6 +19,8 @@ import { ProjectFormComponent } from './pages/admin/project/project-form/project
 import { ProjectManagerComponent } from './pages/admin/project/project-manager/project-manager.component';
 import { UserFormsComponent } from './pages/admin/user/user-forms/user-forms.component';
 import { UserManagerComponent } from './pages/admin/user/user-manager/user-manager.component';
+import { WorkFormComponent } from './pages/admin/work/work-form/work-form.component';
+import { WorkManagerComponent } from './pages/admin/work/work-manager/work-manager.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { AdminLayoutComponent } from './pages/layouts/admin/admin-layout/admin-layout.component';
@@ -133,6 +135,23 @@ const routes: Routes = [
           {
             path: ':id/edit',
             component: BlogFormComponent
+          }
+        ]
+      },
+      {
+        path: 'work', canActivate:[AdminGuard], 
+        children: [
+          {
+            path: '',
+            component: WorkManagerComponent
+          },
+          {
+            path: 'add',
+            component: WorkFormComponent
+          },
+          {
+            path: ':id/edit',
+            component: WorkFormComponent
           }
         ]
       },

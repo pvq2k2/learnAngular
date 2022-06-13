@@ -128,26 +128,50 @@
     {
       "title": "Making a design system from scratch",
       "createAt": "13/6/2022",
-      "categoryPostId": "1",
+      "categoryBlogId": "1",
       "short_desc": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat",
       "description": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
-      "id": 1
+      "id": 1,
+      "categoryBlog": {
+        "name": "Node JS",
+        "id": 1
+      }
     },
     {
       "title": "Creating pixel perfect icons in Figma",
       "createAt": "13/6/2022",
-      "categoryPostId": "2",
+      "categoryBlogId": "2",
       "short_desc": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat",
       "description": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
-      "id": 2
+      "id": 2,
+      "categoryBlog": {
+        "name": "HTML5",
+        "id": 2
+      }
     },
     {
       "title": "UI Interactions of the week",
       "createAt": "13/6/2022",
-      "categoryPostId": "1",
+      "categoryBlogId": "1",
       "short_desc": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat",
       "description": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
-      "id": 3
+      "id": 3,
+      "categoryBlog": {
+        "name": "Node JS",
+        "id": 1
+      }
+    },
+    {
+      "title": "Components 2",
+      "createAt": "14/6/2022",
+      "categoryBlogId": "1",
+      "short_desc": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat",
+      "description": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+      "id": 4,
+      "categoryBlog": {
+        "name": "HTML5",
+        "id": 2
+      }
     }
   ],
   "categoryBlogs": [
@@ -160,10 +184,6 @@
       "id": 2
     }
   ],
-
-
-
-
   "works": [
     {
       "name": "Designing Dashboards",
@@ -172,7 +192,11 @@
       "categoryId": "1",
       "short_desc": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.",
       "description": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
-      "id": 1
+      "id": 1,
+      "category": {
+        "name": "Node JS",
+        "id": 1
+      }
     },
     {
       "name": "Vibrant Portraits",
@@ -181,7 +205,11 @@
       "categoryId": "1",
       "short_desc": "Amet minim mollit non deserunt ullamco est sit aliqua dolor",
       "description": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
-      "id": 2
+      "id": 2,
+      "category": {
+        "name": "Node JS",
+        "id": 1
+      }
     },
     {
       "name": "36 Days of Malayalam type",
@@ -190,7 +218,11 @@
       "categoryId": "2",
       "short_desc": "Amet minim mollit non deserunt ullamco est sit aliqua dolor",
       "description": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
-      "id": 3
+      "id": 3,
+      "category": {
+        "name": "HTML5",
+        "id": 2
+      }
     },
     {
       "name": "Components",
@@ -199,7 +231,11 @@
       "categoryId": "1",
       "short_desc": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat",
       "description": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
-      "id": 4
+      "id": 4,
+      "category": {
+        "name": "Node JS",
+        "id": 1
+      }
     },
     {
       "name": "Designing Landing pages",
@@ -208,10 +244,13 @@
       "categoryId": "1",
       "short_desc": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.",
       "description": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
-      "id": 5
+      "id": 5,
+      "category": {
+        "name": "Node JS",
+        "id": 1
+      }
     }
   ],
-
   "categories": [
     {
       "name": "Node JS",

@@ -17,7 +17,7 @@ export class CategoryWorkService {
   }
 
   getCategoryWork(id: number | string): Observable<ICategories> {
-    return this.http.get<ICategories>(`${apiUrl}/${id}?_embed=project`);
+    return this.http.get<ICategories>(`${apiUrl}/${id}?_embed=works`);
   }
 
   addCategoryWork(category: ICategories): Observable<ICategories> {

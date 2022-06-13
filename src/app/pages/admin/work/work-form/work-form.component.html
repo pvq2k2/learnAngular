@@ -1,7 +1,7 @@
 <header class="bg-white">
     <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 flex justify-between">
-      <h1 id="headdingTitle" class="text-3xl font-bold text-gray-900">Blog From</h1>
-      <a routerLink="/admin/blog" class="sm:ml-3">
+      <h1 id="headdingTitle" class="text-3xl font-bold text-gray-900">Work From</h1>
+      <a routerLink="/admin/work" class="sm:ml-3">
       <button type="button" class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
       <svg class="-ml-1 mr-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
       <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -12,42 +12,50 @@
     </div>
     
   </header>
-    <div class="m-auto max-w-7xl">
+    <div class="m-auto max-w-7xl ">
     <div class="md:mt-0 md:col-span-2">
-      <form #formBlog="ngForm" action="#" id="form-blog" method="POST" (ngSubmit)="onSubmitBlog()">
+      <form #formWork="ngForm" action="#" id="form-work" method="POST" (ngSubmit)="onSubmitWork()">
         <div class="shadow sm:rounded-md sm:overflow-hidden">
-          <div class="px-4 py-5 bg-white space-y-6 sm:p-6">
+          <div class="px-4 bg-white space-y-6 sm:p-6">
 
             <div>
-            <label for="title" class="block text-sm font-medium text-gray-700">
-              Title
+            <label for="name" class="block text-sm font-medium text-gray-700">
+              Name
             </label>
             <div class="mt-1">
             <input 
             type="text" 
-            id="name-blog" 
-            [(ngModel)]="blog.title" 
+            id="name-work" 
+            [(ngModel)]="work.name" 
             name="name" 
             class="shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md p-2" 
             placeholder="Name..."
-            #title="ngModel"
+            #name="ngModel"
             required
             minlength="2"
             />
             </div>
-            <div *ngIf="title.errors">
-              <div *ngIf="title.errors?.['required'] && (title.dirty || title.touched)" class="text-red-500">
+            <div *ngIf="name.errors">
+              <div *ngIf="name.errors?.['required'] && (name.dirty || name.touched)" class="text-red-500">
                 Name is required
               </div>
-              <div *ngIf="title.errors?.['minlength'] && (title.dirty || title.touched)" class="text-red-500">
+              <div *ngIf="name.errors?.['minlength'] && (name.dirty || name.touched)" class="text-red-500">
                 Minlength 2 characters
               </div>
             </div>
           </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">
+              Image
+            </label>
+                <div class="flex text-sm text-gray-600 pt-2">
+                    <input id="file-upload" (change)="uploadImg($event)" type="file">
+            </div>
+          </div>
           <div class="col-span-6 sm:col-span-3">
             <label for="category" class="block text-sm font-medium text-gray-700">Category</label>
-            <select id="category" [(ngModel)]="blog.categoryBlogId" 
-            name="categoryBlogId" autocomplete="category-name" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+            <select id="category" [(ngModel)]="work.categoryId" 
+            name="categoryId" autocomplete="category-name" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
               <option value="0" selected>Select</option>
               <option *ngFor="let category of categorys" name="category" value={{category.id}}>{{category.name}}</option>
             </select>
@@ -60,8 +68,8 @@
               <div class="mt-1">
               <input
               type="text" 
-              id="short_desc-blog" 
-              [(ngModel)]="blog.short_desc"
+              id="short_desc-work" 
+              [(ngModel)]="work.short_desc"
               name="short_desc" 
               class="shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md p-2" 
               placeholder="Shot Description..."
@@ -87,8 +95,8 @@
                 </label>
                 <div class="mt-1">
                 <input type="text"
-                id="description-blog" 
-                [(ngModel)]="blog.description" 
+                id="description-work" 
+                [(ngModel)]="work.description" 
                 name="description" 
                 class="shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md p-2" 
                 placeholder="Description..."
@@ -109,7 +117,7 @@
               </div>
           </div>
           <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
-            <button [disabled]="!formBlog.valid" type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+            <button [disabled]="!formWork.valid" type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
             <svg class="-ml-1 mr-2 h-5 w-5" x-description="Heroicon name: solid/check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
             </svg>
@@ -120,5 +128,4 @@
       </form>
     </div>
   </div>
-
 
