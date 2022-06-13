@@ -16,7 +16,7 @@ export class PostService {
     return this.http.get<IPost[]>(apiUrl);
   }
   getPostLimit(): Observable<IPost[]> {
-    return this.http.get<IPost[]>(`${apiUrl}&_limit=2`)
+    return this.http.get<IPost[]>(`${apiUrl}?_limit=2`)
   }
   getPost(id: string | number): Observable<IPost> {
     return this.http.get<IPost>(`${apiUrl}/${id}`);

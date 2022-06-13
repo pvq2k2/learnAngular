@@ -74,7 +74,7 @@ export class ProjectFormComponent implements OnInit {
     this.projectService.addProject(this.project).subscribe(() => {
       this.notification.success('Success','')
       setTimeout(() => {
-        this.routes.navigate(['admin/post']);
+        this.routes.navigate(['admin/project']);
       }, 2000)
     });
 

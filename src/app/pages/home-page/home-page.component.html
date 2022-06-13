@@ -4,22 +4,23 @@
         <div class="infomation__content" >
             <div class="information__info">
                 <h2>
-                    Hi, I am <span>John</span>,<br>
-                    <span>Creative Technologist</span>
+                    Hi, I am <span>{{ user.name }}</span>,<br>
+                    <span>{{user.position}}</span>
                 </h2>
             </div>
             <div class="information__about">
                 <p>
-                    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
+                    {{user.about}}
                 </p>
             </div>
             <div class="information__btn">
-                <button>Download Resume</button>
+                <a [href]="user.cv" target="_blank" download><button>Download Resume</button></a>
+                
             </div>
         </div>
         
         <div class="information__img">
-            <img src='https://i.postimg.cc/Ss4vK242/Ellipse-1.png' alt='Ellipse-1'/>
+            <img [src]='user.img' alt='Ellipse-1'/>
         </div>
     </div>
 </section>
@@ -30,42 +31,25 @@
                 <span>Rectent posts</span>
             </div>
             <div class="row__view-all">
-                <span>View all</span>
+                <a routerLink="blog">View all</a>
             </div>
         </div>
         <div class="rectent_posts__row-item-rectent">
-            <div class="item_recent">
+
+            <div class="item_recent" *ngFor="let post of posts">
                 <div class="item_rectent__title">
-                    <h2>Making a design system from scratch</h2>
+                    <h2>{{ post.title }}</h2>
                 </div>
                 <div class="item_rectent__row-date-category">
                     <div class="date">
-                        <span>12 Feb 2020</span>
+                        <span>{{ post.createAt }}</span>
                     </div>
                     <div class="category">
                         <span>Design, Pattern</span>
                     </div>
                 </div>
                 <div class="item_rectent__description">
-                    <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
-                </div>
-            </div>
-
-
-            <div class="item_recent">
-                <div class="item_rectent__title">
-                    <h2>Making a design system from scratch</h2>
-                </div>
-                <div class="item_rectent__row-date-category">
-                    <div class="date">
-                        <span>12 Feb 2020</span>
-                    </div>
-                    <div class="category">
-                        <span>Design, Pattern</span>
-                    </div>
-                </div>
-                <div class="item_rectent__description">
-                    <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+                    <p>{{post.short_desc}}</p>
                 </div>
             </div>
         </div>
@@ -80,24 +64,25 @@
                 <span>Featured works</span>
             </div>
         <div class="feature_works__row-item-work">
-            <div class="item_work">
+
+            <div class="item_work" *ngFor="let project of projects">
                 <div class="item_work__img">
-                    <img src='https://i.postimg.cc/0yWmtrcg/Rectangle-30.jpg' alt='Rectangle-30'/>
+                    <img [src]='project.image' alt='Rectangle-30'/>
                 </div>
                 <div class="item_work__content">
                     <div class="item_work__title">
-                        <h2>Designing Dashboards</h2>
+                        <h2>{{ project.name }}</h2>
                     </div>
                     <div class="item_work__row-date-category">
                         <div class="date">
-                         <span>2020</span>
+                         <span>{{ project.createAt }}</span>
                         </div>
                         <div class="category">
-                            <span>Dashboard</span>
+                            <a>{{ project.categoryProjectId == 1 ? "HTML5" : "NodeJS" }}</a>
                         </div>
                     </div>
                     <div class="item_work__description">
-                        <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+                        <p>{{ project.short_desc }}</p>
                     </div>
                 </div>
             </div>
