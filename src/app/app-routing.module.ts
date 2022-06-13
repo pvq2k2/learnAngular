@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminGuard } from './guard/admin.guard';
+import { BlogFormComponent } from './pages/admin/blog/blog-form/blog-form.component';
+import { BlogManagerComponent } from './pages/admin/blog/blog-manager/blog-manager.component';
 import { CategoryPostFormComponent } from './pages/admin/categories/Post/category-post-form/category-post-form.component';
 import { CategoryPostComponent } from './pages/admin/categories/Post/category-post/category-post.component';
 import { CategoryProjectFormComponent } from './pages/admin/categories/Project/category-project-form/category-project-form.component';
@@ -110,6 +112,23 @@ const routes: Routes = [
           {
             path: ':id/edit',
             component: PostFormComponent
+          }
+        ]
+      },
+      {
+        path: 'blog', canActivate:[AdminGuard], 
+        children: [
+          {
+            path: '',
+            component: BlogManagerComponent
+          },
+          {
+            path: 'add',
+            component: BlogFormComponent
+          },
+          {
+            path: ':id/edit',
+            component: BlogFormComponent
           }
         ]
       },

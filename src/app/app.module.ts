@@ -36,6 +36,8 @@ import { CategoryProjectComponent } from './pages/admin/categories/Project/categ
 import { CategoryProjectFormComponent } from './pages/admin/categories/Project/category-project-form/category-project-form.component';
 import { ProjectFormComponent } from './pages/admin/project/project-form/project-form.component';
 import { WorkDetailComponent } from './pages/work-detail/work-detail.component';
+import { BlogManagerComponent } from './pages/admin/blog/blog-manager/blog-manager.component';
+import { BlogFormComponent } from './pages/admin/blog/blog-form/blog-form.component';
 
 registerLocaleData(en);
 
@@ -51,6 +53,8 @@ registerLocaleData(en);
     ProductFormsComponent,
     PostManagerComponent,
     PostFormComponent,
+    BlogManagerComponent,
+    BlogFormComponent,
     UserManagerComponent,
     UserFormsComponent,
     ProjectManagerComponent,

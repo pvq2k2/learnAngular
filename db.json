@@ -124,5 +124,35 @@
       "img": "http://res.cloudinary.com/assignmentjs/image/upload/v1655054427/angular/lkn3dzsn9qr9xpwb4pei.jpg",
       "id": 1
     }
+  ],
+
+
+
+  
+  "blogs": [
+    {
+      "title": "Making a design system from scratch",
+      "createAt": "13/6/2022",
+      "categoryPostId": "1",
+      "short_desc": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat",
+      "description": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+      "id": 1
+    },
+    {
+      "title": "Creating pixel perfect icons in Figma",
+      "createAt": "13/6/2022",
+      "categoryPostId": "2",
+      "short_desc": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat",
+      "description": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+      "id": 2
+    },
+    {
+      "title": "UI Interactions of the week",
+      "createAt": "13/6/2022",
+      "categoryPostId": "1",
+      "short_desc": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat",
+      "description": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
+      "id": 3
+    }
   ]
 }
