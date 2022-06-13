@@ -9,6 +9,8 @@ import { CategoryPostFormComponent } from './pages/admin/categories/Post/categor
 import { CategoryPostComponent } from './pages/admin/categories/Post/category-post/category-post.component';
 import { CategoryProjectFormComponent } from './pages/admin/categories/Project/category-project-form/category-project-form.component';
 import { CategoryProjectComponent } from './pages/admin/categories/Project/category-project/category-project.component';
+import { CategoryWorkFormComponent } from './pages/admin/categories/work/category-work-form/category-work-form.component';
+import { CategoryWorkComponent } from './pages/admin/categories/work/category-work/category-work.component';
 import { PostFormComponent } from './pages/admin/post/post-form/post-form.component';
 import { PostManagerComponent } from './pages/admin/post/post-manager/post-manager.component';
 import { ProductFormsComponent } from './pages/admin/products/product-forms/product-forms.component';
@@ -202,6 +204,23 @@ const routes: Routes = [
               {
                 path: ':id/edit',
                 component: CategoryBlogFormComponent
+              }
+            ]
+          },
+          {
+            path: 'work',
+            children: [
+              {
+                path: '',
+                component: CategoryWorkComponent
+              },
+              {
+                path: 'add',
+                component: CategoryWorkFormComponent
+              },
+              {
+                path: ':id/edit',
+                component: CategoryWorkFormComponent
               }
             ]
           }

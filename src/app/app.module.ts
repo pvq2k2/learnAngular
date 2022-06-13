@@ -40,6 +40,8 @@ import { BlogManagerComponent } from './pages/admin/blog/blog-manager/blog-manag
 import { BlogFormComponent } from './pages/admin/blog/blog-form/blog-form.component';
 import { CategoryBlogComponent } from './pages/admin/categories/blog/category-blog/category-blog.component';
 import { CategoryBlogFormComponent } from './pages/admin/categories/blog/category-blog-form/category-blog-form.component';
+import { CategoryWorkComponent } from './pages/admin/categories/work/category-work/category-work.component';
+import { CategoryWorkFormComponent } from './pages/admin/categories/work/category-work-form/category-work-form.component';
 
 registerLocaleData(en);
 
@@ -67,6 +69,8 @@ registerLocaleData(en);
     CategoryProjectFormComponent,
     CategoryBlogComponent,
     CategoryBlogFormComponent,
+    CategoryWorkComponent,
+    CategoryWorkFormComponent,
     SignInComponent,
     SignUpComponent,
     HomePageComponent,
