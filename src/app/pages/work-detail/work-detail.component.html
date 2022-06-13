@@ -1,0 +1,49 @@
+<main>
+    <section class="feature_works">
+      <div class="container">
+        <div class="feature_works__row-item-work">
+          <div class="item_work">
+            <div class="item_work__content">
+              <div class="item_work__title">
+                <h2>{{ project.name }}</h2>
+              </div>
+              <div class="item_work__row-date-category">
+                <div class="date">
+                  <span>{{ project.createAt }}</span>
+                </div>
+                <div class="category">
+                  <span>{{ project.categoryProjectId == 1 ? "HTML5" : "NodeJS" }}</span>
+                </div>
+              </div>
+              <div class="item_work__description">
+                <p>
+                  {{ project.description }}
+                </p>
+              </div>
+              <div class="item_work__img">
+                <img [src]="project.image" alt="" with="100%"/>
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="item_work">
+              <div class="item_work__content">
+                <div class="item_work__title">
+                  <h2>Heading 1</h2>
+                  <h3>Heading 2</h3>
+                </div>
+                <div class="item_work__description">
+                  <p>
+                      Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
+                  </p>
+                </div>
+                <div class="item_work__img">
+                  <img src="img/Rectangle 5.png" alt="" with="100%"/>
+                  <img src="img/Rectangle 6.png" alt="" with="100%"/>
+                </div>
+              </div>
+            </div> -->
+        </div>
+      </div>
+    </section>
+  </main>

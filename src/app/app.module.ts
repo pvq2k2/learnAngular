@@ -35,6 +35,7 @@ import { ProjectManagerComponent } from './pages/admin/project/project-manager/p
 import { CategoryProjectComponent } from './pages/admin/categories/Project/category-project/category-project.component';
 import { CategoryProjectFormComponent } from './pages/admin/categories/Project/category-project-form/category-project-form.component';
 import { ProjectFormComponent } from './pages/admin/project/project-form/project-form.component';
+import { WorkDetailComponent } from './pages/work-detail/work-detail.component';
 
 registerLocaleData(en);
 
@@ -63,6 +64,7 @@ registerLocaleData(en);
     HomePageComponent,
     BlogComponent,
     WorkComponent,
+    WorkDetailComponent,
     HeaderComponent,
     FooterComponent
   ],

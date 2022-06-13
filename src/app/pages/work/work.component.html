@@ -8,26 +8,26 @@
     <section class="feature_works">
         <div class="container">
             <div class="feature_works__row-item-work">
-                <div class="item_work" *ngFor="let project of projects">
-                    <div class="item_work__img">
-                        <img [src]='project.image' alt='Rectangle-30'/>
-                    </div>
-                    <div class="item_work__content">
-                        <div class="item_work__title">
-                            <h2>{{ project.name }}</h2>
+                <div class="item_work cursor-pointer" *ngFor="let project of projects" routerLink="{{ project.id }}">
+                        <div class="item_work__img">
+                            <img [src]='project.image' alt='Rectangle-30'/>
                         </div>
-                        <div class="item_work__row-date-category">
-                            <div class="date">
-                             <span>{{ project.createAt }}</span>
+                        <div class="item_work__content">
+                            <div class="item_work__title">
+                                <h2>{{ project.name }}</h2>
                             </div>
-                            <div class="category">
-                                <span>{{ project.categoryProjectId == 1 ? "HTML5" : "NodeJS" }}</span>
+                            <div class="item_work__row-date-category">
+                                <div class="date">
+                                 <span>{{ project.createAt }}</span>
+                                </div>
+                                <div class="category">
+                                    <span>{{ project.categoryProjectId == 1 ? "HTML5" : "NodeJS" }}</span>
+                                </div>
+                            </div>
+                            <div class="item_work__description">
+                                <p>{{ project.short_desc }}</p>
                             </div>
                         </div>
-                        <div class="item_work__description">
-                            <p>{{ project.short_desc }}</p>
-                        </div>
-                    </div>
                 </div>
 
 

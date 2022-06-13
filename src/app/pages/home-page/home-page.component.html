@@ -65,7 +65,7 @@
             </div>
         <div class="feature_works__row-item-work">
 
-            <div class="item_work" *ngFor="let project of projects">
+            <div class="item_work cursor-pointer" *ngFor="let project of projects" routerLink="work/{{ project.id }}">
                 <div class="item_work__img">
                     <img [src]='project.image' alt='Rectangle-30'/>
                 </div>
