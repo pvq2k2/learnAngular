@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdminGuard } from './guard/admin.guard';
 import { BlogFormComponent } from './pages/admin/blog/blog-form/blog-form.component';
 import { BlogManagerComponent } from './pages/admin/blog/blog-manager/blog-manager.component';
+import { CategoryBlogFormComponent } from './pages/admin/categories/blog/category-blog-form/category-blog-form.component';
+import { CategoryBlogComponent } from './pages/admin/categories/blog/category-blog/category-blog.component';
 import { CategoryPostFormComponent } from './pages/admin/categories/Post/category-post-form/category-post-form.component';
 import { CategoryPostComponent } from './pages/admin/categories/Post/category-post/category-post.component';
 import { CategoryProjectFormComponent } from './pages/admin/categories/Project/category-project-form/category-project-form.component';
@@ -183,6 +185,23 @@ const routes: Routes = [
               {
                 path: ':id/edit',
                 component: CategoryProjectFormComponent
+              }
+            ]
+          },
+          {
+            path: 'blog',
+            children: [
+              {
+                path: '',
+                component: CategoryBlogComponent
+              },
+              {
+                path: 'add',
+                component: CategoryBlogFormComponent
+              },
+              {
+                path: ':id/edit',
+                component: CategoryBlogFormComponent
               }
             ]
           }

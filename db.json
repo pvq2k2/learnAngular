@@ -125,10 +125,6 @@
       "id": 1
     }
   ],
-
-
-
-  
   "blogs": [
     {
       "title": "Making a design system from scratch",
@@ -153,6 +149,17 @@
       "short_desc": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat",
       "description": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
       "id": 3
+    }
+  ],
+  "categoryBlogs": [
+    {
+      "name": "Node JS",
+      "id": 1
+    },
+    {
+      "name": "HTML5",
+      "id": 2,
+      "post": []
     }
   ]
 }
