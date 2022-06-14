@@ -45,7 +45,7 @@
                         <span>{{ blog.createAt }}</span>
                     </div>
                     <div class="category">
-                        <span>{{ blog.categoryBlog?.name }}</span>
+                        <a class="text-[#8695a4]" routerLink="blog/categorydetail/{{ blog.categoryBlog?.id }}">{{ blog.categoryBlog?.name }}</a>
                     </div>
                 </div>
                 <div class="item_rectent__description">

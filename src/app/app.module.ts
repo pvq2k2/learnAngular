@@ -36,6 +36,7 @@ import { CategoryWorkComponent } from './pages/admin/categories/work/category-wo
 import { CategoryWorkFormComponent } from './pages/admin/categories/work/category-work-form/category-work-form.component';
 import { WorkManagerComponent } from './pages/admin/work/work-manager/work-manager.component';
 import { WorkFormComponent } from './pages/admin/work/work-form/work-form.component';
+import { BlogCategoryDetailComponent } from './pages/blog-category-detail/blog-category-detail.component';
 
 registerLocaleData(en);
 
@@ -51,6 +52,7 @@ registerLocaleData(en);
     ProductFormsComponent,
     BlogManagerComponent,
     BlogFormComponent,
+    BlogCategoryDetailComponent,
     WorkManagerComponent,
     WorkFormComponent,
     UserManagerComponent,

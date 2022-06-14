@@ -1,27 +1,27 @@
 <main>
     <div class="title">
         <div class="container">
-            <h2>Blog</h2>
+            <h2>Category "{{ cateName?.name }}"</h2>
         </div>
 
     </div>
     <section class="rectent_posts">
         <div class="container">
             <div class="rectent_posts__row-item-rectent">
-                <div class="item_recent" *ngFor="let blog of blogs">
+                <div class="item_recent" *ngFor="let category of categoryDetail">
                     <div class="item_rectent__title">
-                        <h2>{{ blog.title }}</h2>
+                        <h2>{{ category.title }}</h2>
                     </div>
                     <div class="item_rectent__row-date-category">
                         <div class="date">
-                            <span>{{ blog.createAt }}</span>
+                            <span>{{ category.createAt }}</span>
                         </div>
                         <div class="category">
-                            <a class="text-[#8695a4]" routerLink="categorydetail/{{ blog.categoryBlog?.id }}">{{ blog.categoryBlog?.name }}</a>
+                            <span>{{ category.categoryBlog?.name }}</span>
                         </div>
                     </div>
                     <div class="item_rectent__description">
-                        <p>{{ blog.short_desc }}</p>
+                        <p>{{ category.short_desc }}</p>
                     </div>
                 </div>
 
