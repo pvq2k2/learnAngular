@@ -38,6 +38,7 @@ import { WorkManagerComponent } from './pages/admin/work/work-manager/work-manag
 import { WorkFormComponent } from './pages/admin/work/work-form/work-form.component';
 import { BlogCategoryDetailComponent } from './pages/blog-category-detail/blog-category-detail.component';
 import { WorkCategoryDetailComponent } from './pages/work-category-detail/work-category-detail.component';
+import { BlogDetailComponent } from './pages/blog-detail/blog-detail.component';
 
 registerLocaleData(en);
 
@@ -53,10 +54,8 @@ registerLocaleData(en);
     ProductFormsComponent,
     BlogManagerComponent,
     BlogFormComponent,
-    BlogCategoryDetailComponent,
     WorkManagerComponent,
     WorkFormComponent,
-    WorkCategoryDetailComponent,
     UserManagerComponent,
     UserFormsComponent,
     CategoryBlogComponent,
@@ -67,8 +66,11 @@ registerLocaleData(en);
     SignUpComponent,
     HomePageComponent,
     BlogComponent,
+    BlogDetailComponent,
+    BlogCategoryDetailComponent,
     WorkComponent,
     WorkDetailComponent,
+    WorkCategoryDetailComponent,
     HeaderComponent,
     FooterComponent
   ],

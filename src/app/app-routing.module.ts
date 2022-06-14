@@ -14,6 +14,7 @@ import { UserManagerComponent } from './pages/admin/user/user-manager/user-manag
 import { WorkFormComponent } from './pages/admin/work/work-form/work-form.component';
 import { WorkManagerComponent } from './pages/admin/work/work-manager/work-manager.component';
 import { BlogCategoryDetailComponent } from './pages/blog-category-detail/blog-category-detail.component';
+import { BlogDetailComponent } from './pages/blog-detail/blog-detail.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { AdminLayoutComponent } from './pages/layouts/admin/admin-layout/admin-layout.component';
@@ -40,9 +41,14 @@ const routes: Routes = [
               component: BlogComponent
             },
             {
+              path: ':id',
+              component: BlogDetailComponent
+            },
+            {
               path: 'categorydetail/:id',
               component: BlogCategoryDetailComponent
             }
+
           ]
         },
         {

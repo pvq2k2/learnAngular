@@ -1,28 +1,28 @@
 <main>
-    <section class="feature_works">
+    <section class="feature_blogs">
       <div class="container">
-        <div class="feature_works__row-item-work">
-          <div class="item_work">
-            <div class="item_work__content">
-              <div class="item_work__title">
-                <h2>{{ work.name }}</h2>
+        <div class="feature_blogs__row-item-blog">
+          <div class="item_blog">
+            <div class="item_blog__content">
+              <div class="item_blog__title">
+                <h2>{{ blog.title }}</h2>
               </div>
-              <div class="item_work__row-date-category">
+              <div class="item_blog__row-date-category">
                 <div class="date">
-                  <span>{{ work.createAt }}</span>
+                  <span>{{ blog.createAt }}</span>
                 </div>
                 <div class="category">
-                  <a class="text-[#8695a4]" routerLink="/work/categorydetail/{{ work.category?.id }}">{{ work.category?.name }}</a>
+                  <a class="text-[#8695a4]" routerLink="/blog/categorydetail/{{ blog.categoryBlog?.id }}">{{ blog.categoryBlog?.name }}</a>
                 </div>
               </div>
-              <div class="item_work__description">
+              <div class="item_blog__description">
                 <p>
-                  {{ work.description }}
+                  {{ blog.description }}
                 </p>
               </div>
-              <div class="item_work__img">
-                <img [src]="work.image" alt="" with="100%"/>
-              </div>
+              <!-- <div class="item_blog__img">
+                <img [src]="blog.image" alt="" with="100%"/>
+              </div> -->
             </div>
           </div>
 

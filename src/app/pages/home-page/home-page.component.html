@@ -36,7 +36,7 @@
         </div>
         <div class="rectent_posts__row-item-rectent">
 
-            <div class="item_recent" *ngFor="let blog of blogs">
+            <div class="item_recent cursor-pointer" *ngFor="let blog of blogs" routerLink="blog/{{ blog.id }}">
                 <div class="item_rectent__title">
                     <h2>{{ blog.title }}</h2>
                 </div>
