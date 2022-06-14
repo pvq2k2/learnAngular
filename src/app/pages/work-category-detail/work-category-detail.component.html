@@ -1,31 +1,31 @@
 <main>
     <div class="title">
         <div class="container">
-            <h2>Work</h2>
+            <h2>Category "{{ cateName?.name }}"</h2>
         </div>
 
     </div>
     <section class="feature_works">
         <div class="container">
             <div class="feature_works__row-item-work">
-                <div class="item_work cursor-pointer" *ngFor="let work of works" routerLink="{{ work.id }}">
+                <div class="item_work cursor-pointer" *ngFor="let category of categoryDetail" routerLink="{{ category.id }}">
                         <div class="item_work__img">
-                            <img [src]='work.image' alt='Rectangle-30'/>
+                            <img [src]='category.image' alt='Rectangle-30'/>
                         </div>
                         <div class="item_work__content">
                             <div class="item_work__title">
-                                <h2>{{ work.name }}</h2>
+                                <h2>{{ category.name }}</h2>
                             </div>
                             <div class="item_work__row-date-category">
                                 <div class="date">
-                                 <span>{{ work.createAt }}</span>
+                                 <span>{{ category.createAt }}</span>
                                 </div>
                                 <div class="category">
-                                    <a class="text-[#8695a4]" routerLink="categorydetail/{{ work.category?.id }}">{{ work.category?.name }}</a>
+                                    <span>{{ category.category?.name }}</span>
                                 </div>
                             </div>
                             <div class="item_work__description">
-                                <p>{{ work.short_desc }}</p>
+                                <p>{{ category.short_desc }}</p>
                             </div>
                         </div>
                 </div>

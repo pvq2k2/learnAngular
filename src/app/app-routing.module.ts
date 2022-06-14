@@ -20,6 +20,7 @@ import { AdminLayoutComponent } from './pages/layouts/admin/admin-layout/admin-l
 import { WebsiteLayoutComponent } from './pages/layouts/website/website-layout/website-layout.component';
 import { SignInComponent } from './pages/sign-in/sign-in.component';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
+import { WorkCategoryDetailComponent } from './pages/work-category-detail/work-category-detail.component';
 import { WorkDetailComponent } from './pages/work-detail/work-detail.component';
 import { WorkComponent } from './pages/work/work.component';
 
@@ -54,6 +55,10 @@ const routes: Routes = [
             {
               path: ':id',
               component: WorkDetailComponent
+            },
+            {
+              path: 'categorydetail/:id',
+              component: WorkCategoryDetailComponent
             }
           ]
         },
