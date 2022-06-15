@@ -71,6 +71,7 @@ export class WorkFormComponent implements OnInit {
         }, 2000)
       })
     }
+    this.work.categoryId = Number(this.work.categoryId);
     this.workService.addWork(this.work).subscribe(() => {
       this.notification.success('Success','')
       setTimeout(() => {

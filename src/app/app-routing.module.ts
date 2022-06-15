@@ -16,6 +16,7 @@ import { WorkManagerComponent } from './pages/admin/work/work-manager/work-manag
 import { BlogCategoryDetailComponent } from './pages/blog-category-detail/blog-category-detail.component';
 import { BlogDetailComponent } from './pages/blog-detail/blog-detail.component';
 import { BlogComponent } from './pages/blog/blog.component';
+import { ContactComponent } from './pages/contact/contact.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { AdminLayoutComponent } from './pages/layouts/admin/admin-layout/admin-layout.component';
 import { WebsiteLayoutComponent } from './pages/layouts/website/website-layout/website-layout.component';
@@ -68,6 +69,10 @@ const routes: Routes = [
             }
           ]
         },
+        {
+          path: 'contact',
+          component: ContactComponent
+        }
     ]
   },
   {

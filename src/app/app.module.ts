@@ -39,6 +39,7 @@ import { WorkFormComponent } from './pages/admin/work/work-form/work-form.compon
 import { BlogCategoryDetailComponent } from './pages/blog-category-detail/blog-category-detail.component';
 import { WorkCategoryDetailComponent } from './pages/work-category-detail/work-category-detail.component';
 import { BlogDetailComponent } from './pages/blog-detail/blog-detail.component';
+import { ContactComponent } from './pages/contact/contact.component';
 
 registerLocaleData(en);
 
@@ -71,6 +72,7 @@ registerLocaleData(en);
     WorkComponent,
     WorkDetailComponent,
     WorkCategoryDetailComponent,
+    ContactComponent,
     HeaderComponent,
     FooterComponent
   ],

@@ -53,6 +53,7 @@ export class BlogFormComponent implements OnInit {
         }, 2000)
       })
     }
+    this.blog.categoryBlogId = Number(this.blog.categoryBlogId);
     this.blogService.addBlog(this.blog).subscribe(() => {
       this.notification.success('Success','')
       setTimeout(() => {
